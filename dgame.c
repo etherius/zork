@@ -15,7 +15,7 @@ extern int strcmp P((const char *, const char *));
 static logical xvehic_ P((int));
 static void xendmv_ P((logical));
 
-void game_()
+void StartGame()
 {
     /* Local variables */
     logical f;

@@ -46,7 +46,7 @@ typedef int logical;
 // Renamed Functions
 void ExitGame();
 logical InitialiseGame();
-
+void StartGame();
 
 extern logical
 	protected P((void)),
@@ -64,7 +64,6 @@ extern void
 	cpinfo_ P((int, int)),
 	encryp_ P((const char *, char *)),
 	fightd_ P((void)),
-	game_ P((void)),
 	gdt_ P((void)),
 	gttime_ P((int *)),
 	invent_ P((int)),
