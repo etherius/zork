@@ -1,5 +1,5 @@
 # Makefile for dungeon
-
+CC = gcc
 # Where to install the program
 BINDIR = /usr/games
 
@@ -63,7 +63,7 @@ OBJS =	actors.o ballop.o clockr.o demons.o dgame.o dinit.o dmain.o\
 	nrooms.o objcts.o rooms.o sobjs.o supp.o sverbs.o verbs.o villns.o
 
 dungeon: $(OBJS) dtextc.dat
-	$(CC) $(CFLAGS) -o zork $(OBJS) $(LIBS)
+	$(CC) $(CFLAGS) -o zork $(OBJS)
 
 install: zork dtextc.dat
 	cp zork $(BINDIR)
