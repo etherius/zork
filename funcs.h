@@ -45,6 +45,8 @@ typedef int logical;
 
 // Renamed Functions
 void ExitGame();
+logical InitialiseGame();
+
 
 extern logical
 	protected P((void)),
@@ -105,7 +107,6 @@ extern logical
 	drop_ P((logical)),
 	findxt_ P((int, int)),
 	ghere_ P((int, int)),
-	init_ P((void)),
 	lightp_ P((int)),
 	lit_ P((int)),
 	moveto_ P((int, int)),

@@ -94,7 +94,7 @@ FILE *indxfile;
 	*pf++ = getc(indxfile);
 }
 
-logical init_()
+logical InitialiseGame()
 {
     /* System generated locals */
     int i__1;

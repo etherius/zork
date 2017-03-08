@@ -12,7 +12,7 @@
 
 void main(int argc, char **argv)
 {
-    if (init_()) {
+    if (InitialiseGame()) {
 		game_();
     }
     ExitGame();
