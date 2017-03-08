@@ -12,12 +12,10 @@
 #include <time.h>
 #endif /* ! BSD4_2 */
 
+#include <stdlib.h>
 #include "funcs.h"
 
 /* Define these here to avoid using <stdlib.h> */
-
-extern void exit P((int));
-extern int rand P((void));
 
 /* We should have a definition for time_t and struct tm by now.  Make
  * sure we have definitions for the functions we want to call.
