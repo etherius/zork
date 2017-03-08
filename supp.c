@@ -15,8 +15,6 @@
 #include <stdlib.h>
 #include "funcs.h"
 
-/* Define these here to avoid using <stdlib.h> */
-
 /* We should have a definition for time_t and struct tm by now.  Make
  * sure we have definitions for the functions we want to call.
  * The argument to localtime should be P((const time_t *)), but Ultrix
@@ -28,7 +26,7 @@ extern struct tm *localtime ();
 
 /* Terminate the game */
 
-void exit_()
+void ExitGame()
 {
     fprintf(stderr, "The game is over.\n");
     exit(0);

@@ -82,7 +82,7 @@ logical nl;
     x = ((- x) - 1) * 8;
     if (fseek(dbfile, x + (long)rmsg_1.mrloc, SEEK_SET) == EOF) {
 	fprintf(stderr, "Error seeking database loc %d\n", x);
-	exit_();
+	ExitGame();
     }
 
     if (nl)
@@ -94,7 +94,7 @@ logical nl;
 	i = getc(dbfile);
 	if (i == EOF) {
 	    fprintf(stderr, "Error reading database loc %d\n", x);
-	    exit_();
+	    ExitGame();
 	}
 	i ^= zkey[x & 0xf] ^ (x & 0xff);
 	x = x + 1;
@@ -112,7 +112,7 @@ logical nl;
 	    rspsb2nl_(y, 0, 0, 0);
 	    if (fseek(dbfile, iloc, SEEK_SET) == EOF) {
 		fprintf(stderr, "Error seeking database loc %d\n", iloc);
-		exit_();
+		ExitGame();
 	    }
 	    y = z;
 	    z = 0;
@@ -179,7 +179,7 @@ int b;
     if (debug_1.dbgflg != 0) {
 	return;
     }
-    exit_();
+    ExitGame();
 
 } /* bug_ */
 
@@ -428,7 +428,7 @@ L1100:
     score_(0);
 /* 						!TELL SCORE. */
     (void) fclose(dbfile);
-    exit_();
+    ExitGame();
 
 } /* jigsup_ */
 

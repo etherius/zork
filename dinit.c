@@ -127,7 +127,7 @@ logical init_()
     more_output("                    \"You shall not pass.\"");
     more_output("");
     more_output("As he grabs you by the neck all grows dim about you.");
-    exit_();
+    ExitGame();
 
 /* NOW START INITIALIZATION PROPER */
 

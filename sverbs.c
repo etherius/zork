@@ -360,7 +360,7 @@ L15000:
 	return ret_val;
     }
 /* 						!ASK FOR Y/N DECISION. */
-    exit_();
+    ExitGame();
 /* 						!BYE. */
 /* SVERBS, PAGE 4 */
 

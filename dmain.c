@@ -10,17 +10,10 @@
 #include "funcs.h"
 #include "vars.h"
 
-void main(argc, argv)
-int argc;
-char **argv;
+void main(int argc, char **argv)
 {
-/* 1) INITIALIZE DATA STRUCTURES */
-/* 2) PLAY GAME */
-
     if (init_()) {
-	game_();
+		game_();
     }
-/* 						!IF INIT, PLAY GAME. */
-    exit_();
-/* 						!DONE */
-} /* MAIN__ */
+    ExitGame();
+}

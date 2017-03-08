@@ -43,6 +43,9 @@ typedef int logical;
 #define min(a,b) ((a) <= (b) ? (a) : (b))
 #define max(a,b) ((a) >= (b) ? (a) : (b))
 
+// Renamed Functions
+void ExitGame();
+
 extern logical
 	protected P((void)),
 	wizard P((void));
@@ -58,7 +61,6 @@ extern void
 	cpgoto_ P((int)),
 	cpinfo_ P((int, int)),
 	encryp_ P((const char *, char *)),
-	exit_ P((void)),
 	fightd_ P((void)),
 	game_ P((void)),
 	gdt_ P((void)),
