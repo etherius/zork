@@ -10,19 +10,19 @@
 #include "vars.h"
 
 logical sobjs_(ri, arg)
-integer ri;
-integer arg;
+int ri;
+int arg;
 {
     /* System generated locals */
-    integer i__1;
+    int i__1;
     logical ret_val;
 
     /* Local variables */
     logical f;
-    integer i;
-    integer mroom;
-    integer av;
-    integer odi2 = 0, odo2 = 0;
+    int i;
+    int mroom;
+    int av;
+    int odi2 = 0, odo2 = 0;
 
     if (prsvec_1.prso > 220) {
 	goto L5;

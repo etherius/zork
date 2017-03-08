@@ -13,12 +13,12 @@ logical take_(flg)
 logical flg;
 {
     /* System generated locals */
-    integer i__1;
+    int i__1;
     logical ret_val;
 
     /* Local variables */
-    integer oa;
-    integer x;
+    int oa;
+    int x;
 
     ret_val = FALSE_;
 /* 						!ASSUME LOSES. */
@@ -109,7 +109,7 @@ logical z;
 
     /* Local variables */
     logical f;
-    integer i, x;
+    int i, x;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */
@@ -197,8 +197,8 @@ logical flg;
     logical ret_val;
 
     /* Local variables */
-    integer j;
-    integer svi, svo;
+    int j;
+    int svi, svo;
 
     ret_val = FALSE_;
     if (prsvec_1.prso <= star_1.strbit && prsvec_1.prsi <= star_1.strbit) {
@@ -332,16 +332,16 @@ L1000:
 /* VALUAC- HANDLES VALUABLES/EVERYTHING */
 
 void valuac_(v)
-integer v;
+int v;
 {
     /* System generated locals */
-    integer i__1;
+    int i__1;
 
     /* Local variables */
     logical f;
-    integer i;
+    int i;
     logical f1;
-    integer savep, saveh;
+    int savep, saveh;
 
     f = TRUE_;
 /* 						!ASSUME NO ACTIONS. */

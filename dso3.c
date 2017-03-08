@@ -9,15 +9,15 @@
 #include "vars.h"
 
 logical findxt_(dir, rm)
-integer dir;
-integer rm;
+int dir;
+int rm;
 {
     /* System generated locals */
     logical ret_val;
 
     /* Local variables */
-    integer i, xi;
-    integer xxxflg;
+    int i, xi;
+    int xxxflg;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */
@@ -70,19 +70,19 @@ L1000:
 
 /* DECLARATIONS */
 
-integer fwim_(f1, f2, rm, con, adv, nocare)
-integer f1;
-integer f2;
-integer rm;
-integer con;
-integer adv;
+int fwim_(f1, f2, rm, con, adv, nocare)
+int f1;
+int f2;
+int rm;
+int con;
+int adv;
 logical nocare;
 {
     /* System generated locals */
-    integer ret_val, i__1, i__2;
+    int ret_val, i__1, i__2;
 
     /* Local variables */
-    integer i, j;
+    int i, j;
 
 
 /* OBJECTS */
@@ -161,9 +161,9 @@ L1000:
 /* 	YES-IS-TRUE=YESNO(QUESTION,YES-STRING,NO-STRING) */
 
 logical yesno_(q, y, n)
-integer q;
-integer y;
-integer n;
+int q;
+int y;
+int n;
 {
     /* System generated locals */
     logical ret_val;

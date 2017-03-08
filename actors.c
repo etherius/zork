@@ -8,14 +8,14 @@
 #include "vars.h"
 
 logical aappli_(ri)
-integer ri;
+int ri;
 {
     /* System generated locals */
     logical ret_val;
 
     /* Local variables */
     logical f;
-    integer i;
+    int i;
 
     if (ri == 0) {
 	goto L10;
@@ -142,12 +142,12 @@ L2200:
 void thiefd_()
 {
     /* System generated locals */
-    integer i__1, i__2;
+    int i__1, i__2;
 
     /* Local variables */
-    integer i, j, nr;
+    int i, j, nr;
     logical once;
-    integer rhere;
+    int rhere;
 
 /* 						!SET UP DETAIL FLAG. */
     once = FALSE_;

@@ -12,14 +12,14 @@
 
 extern int strcmp P((const char *, const char *));
 
-static logical xvehic_ P((integer));
+static logical xvehic_ P((int));
 static void xendmv_ P((logical));
 
 void game_()
 {
     /* Local variables */
     logical f;
-    integer i;
+    int i;
 
 /* START UP, DESCRIBE CURRENT LOCATION. */
 
@@ -242,13 +242,13 @@ logical flag;
 /* DECLARATIONS */
 
 static logical xvehic_(n)
-integer n;
+int n;
 {
     /* System generated locals */
     logical ret_val;
 
     /* Local variables */
-    integer av;
+    int av;
 
     ret_val = FALSE_;
 /* 						!ASSUME LOSES. */

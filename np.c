@@ -13,11 +13,11 @@
 
 extern int system P((const char *));
 
-static logical lex_ P((char *, integer *, integer *, logical));
+static logical lex_ P((char *, int *, int *, logical));
 
 void rdline_(buffer, who)
 char *buffer;
-integer who;
+int who;
 {
     /* Local variables */
     char *z, *zlast;
@@ -68,11 +68,11 @@ char *inbuf;
 logical vbflag;
 {
     /* System generated locals */
-    integer i__1;
+    int i__1;
     logical ret_val;
 
     /* Local variables */
-    integer outbuf[40], outlnt;
+    int outbuf[40], outlnt;
 
     /* Parameter adjustments */
     --inbuf;
@@ -134,11 +134,11 @@ L100:
 /* DECLARATIONS */
 
 void orphan_(o1, o2, o3, o4, o5)
-integer o1;
-integer o2;
-integer o3;
-integer o4;
-integer o5;
+int o1;
+int o2;
+int o3;
+int o4;
+int o5;
 {
     orphs_1.oflag = o1;
 /* 						!SET UP NEW ORPHANS. */
@@ -154,8 +154,8 @@ integer o5;
 
 static logical lex_(inbuf, outbuf, op, vbflag)
 char *inbuf;
-integer *outbuf;
-integer *op;
+int *outbuf;
+int *op;
 logical vbflag;
 {
     /* Initialized data */
@@ -168,9 +168,9 @@ logical vbflag;
     logical ret_val;
 
     /* Local variables */
-    integer i;
+    int i;
     char j;
-    integer k, j1, j2, cp;
+    int k, j1, j2, cp;
 
     /* Parameter adjustments */
     --outbuf;

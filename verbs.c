@@ -8,23 +8,23 @@
 #include "vars.h"
 
 logical vappli_(ri)
-integer ri;
+int ri;
 {
     /* Initialized data */
 
-    const integer mxnop = 39;
-    const integer mxsmp = 99;
+    const int mxnop = 39;
+    const int mxsmp = 99;
 
     /* System generated locals */
-    integer i__1;
+    int i__1;
     logical ret_val;
 
     /* Local variables */
-    integer melee;
+    int melee;
     logical f;
-    integer i, j, av;
-    integer rmk;
-    integer odi2 = 0, odo2 = 0;
+    int i, j, av;
+    int rmk;
+    int odi2 = 0, odo2 = 0;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS. */
@@ -1309,11 +1309,11 @@ L87500:
 logical clockd_()
 {
     /* System generated locals */
-    integer i__1;
+    int i__1;
     logical ret_val;
 
     /* Local variables */
-    integer i;
+    int i;
 
     ret_val = FALSE_;
 /* 						!ASSUME NO ACTION. */

@@ -8,7 +8,7 @@
 #include "vars.h"
 
 logical ballop_(arg)
-integer arg;
+int arg;
 {
     /* System generated locals */
     logical ret_val;

@@ -8,16 +8,16 @@
 #include "vars.h"
 
 logical rappl1_(ri)
-integer ri;
+int ri;
 {
     /* System generated locals */
-    integer i__1, i__2;
+    int i__1, i__2;
     logical ret_val;
 
     /* Local variables */
     logical f;
-    integer i;
-    integer j;
+    int i;
+    int j;
 
     ret_val = TRUE_;
 /* 						!USUALLY IGNORED. */

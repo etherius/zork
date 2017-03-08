@@ -8,14 +8,14 @@
 #include "vars.h"
 
 logical lightp_(obj)
-integer obj;
+int obj;
 {
     /* System generated locals */
     logical ret_val;
 
     /* Local variables */
-    integer flobts;
-    integer i;
+    int flobts;
+    int i;
 
     ret_val = TRUE_;
 /* 						!ASSUME WINS */
