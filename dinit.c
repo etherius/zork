@@ -12,6 +12,7 @@
 
 #include "funcs.h"
 #include "vars.h"
+#include "DatabaseHandler.h"
 
 /* This is here to avoid depending on the existence of <stdlib.h> */
 
@@ -34,65 +35,6 @@ FILE *dbfile;
 #ifndef LOCALTEXTFILE
 #define LOCALTEXTFILE "dtextc.dat"
 #endif
-
-/* Read a single two byte int from the index file */
-
-#define rdint(indxfile) \
-    (ch = getc(indxfile), \
-     ((ch > 127) ? (ch - 256) : (ch)) * 256 + getc(indxfile))
-
-/* Read a number of two byte ints from the index file */
-
-static void rdints(c, pi, indxfile)
-int c;
-int *pi;
-FILE *indxfile;
-{
-    int ch;	/* Local variable for rdint */
-
-    while (c-- != 0)
-	*pi++ = rdint(indxfile);
-}
-
-/* Read a partial array of ints.  These are stored as index,value
- * pairs.
- */
-
-static void rdpartialints(c, pi, indxfile)
-int c;
-int *pi;
-FILE *indxfile;
-{
-    int ch;	/* Local variable for rdint */
-
-    while (1) {
-	int i;
-
-	if (c < 255) {
-	    i = getc(indxfile);
-	    if (i == 255)
-		return;
-	}
-	else {
-	    i = rdint(indxfile);
-	    if (i == -1)
-		return;
-	}
-
-	pi[i] = rdint(indxfile);
-    }
-}
-
-/* Read a number of one byte flags from the index file */
-
-static void rdflags(c, pf, indxfile)
-int c;
-logical *pf;
-FILE *indxfile;
-{
-    while (c-- != 0)
-	*pf++ = getc(indxfile);
-}
 
 logical InitialiseGame()
 {
