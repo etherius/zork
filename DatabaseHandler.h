@@ -4,13 +4,9 @@
 #include <stdio.h>
 #include "funcs.h"
 
-/* Read a single two byte integer from the index file */
-#define rdint(indxfile) \
-    (ch = getc(indxfile), \
-     ((ch > 127) ? (ch - 256) : (ch)) * 256 + getc(indxfile))
-
-void rdints(int c, int * pi, FILE * indxfile);
-void rdpartialints(int c, int * pi, FILE * indxfile);    
-void rdflags(int c, logical * pf, FILE * indxfile);
-
+void ReadIntegerArray(int c, int * pi, FILE * indxfile);
+void ReadKeyValueArray(int c, int * pi, FILE * indxfile);    
+void ReadFlagArray(int c, logical * pf, FILE * indxfile);
+logical IsByte(int typeOfNumner);
+int ReadInteger(FILE * file);
 #endif

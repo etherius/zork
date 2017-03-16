@@ -287,74 +287,74 @@ L10000:
 
     indxfile = dbfile;
 
-    i = rdint(indxfile);
-    j = rdint(indxfile);
-    k = rdint(indxfile);
+    i = ReadInteger(indxfile);
+    j = ReadInteger(indxfile);
+    k = ReadInteger(indxfile);
 
 /* 						!GET VERSION. */
     if (i != vers_1.vmaj || j != vers_1.vmin) {
 	goto L1925;
     }
 
-    state_1.mxscor = rdint(indxfile);
-    star_1.strbit = rdint(indxfile);
-    state_1.egmxsc = rdint(indxfile);
+    state_1.mxscor = ReadInteger(indxfile);
+    star_1.strbit = ReadInteger(indxfile);
+    state_1.egmxsc = ReadInteger(indxfile);
 
-    rooms_1.rlnt = rdint(indxfile);
-    rdints(rooms_1.rlnt, &rooms_1.rdesc1[0], indxfile);
-    rdints(rooms_1.rlnt, &rooms_1.rdesc2[0], indxfile);
-    rdints(rooms_1.rlnt, &rooms_1.rexit[0], indxfile);
-    rdpartialints(rooms_1.rlnt, &rooms_1.ractio[0], indxfile);
-    rdpartialints(rooms_1.rlnt, &rooms_1.rval[0], indxfile);
-    rdints(rooms_1.rlnt, &rooms_1.rflag[0], indxfile);
+    rooms_1.rlnt = ReadInteger(indxfile);
+    ReadIntegerArray(rooms_1.rlnt, &rooms_1.rdesc1[0], indxfile);
+    ReadIntegerArray(rooms_1.rlnt, &rooms_1.rdesc2[0], indxfile);
+    ReadIntegerArray(rooms_1.rlnt, &rooms_1.rexit[0], indxfile);
+    ReadKeyValueArray(rooms_1.rlnt, &rooms_1.ractio[0], indxfile);
+    ReadKeyValueArray(rooms_1.rlnt, &rooms_1.rval[0], indxfile);
+    ReadIntegerArray(rooms_1.rlnt, &rooms_1.rflag[0], indxfile);
 
-    exits_1.xlnt = rdint(indxfile);
-    rdints(exits_1.xlnt, &exits_1.travel[0], indxfile);
+    exits_1.xlnt = ReadInteger(indxfile);
+    ReadIntegerArray(exits_1.xlnt, &exits_1.travel[0], indxfile);
 
-    objcts_1.olnt = rdint(indxfile);
-    rdints(objcts_1.olnt, &objcts_1.odesc1[0], indxfile);
-    rdints(objcts_1.olnt, &objcts_1.odesc2[0], indxfile);
-    rdpartialints(objcts_1.olnt, &objcts_1.odesco[0], indxfile);
-    rdpartialints(objcts_1.olnt, &objcts_1.oactio[0], indxfile);
-    rdints(objcts_1.olnt, &objcts_1.oflag1[0], indxfile);
-    rdpartialints(objcts_1.olnt, &objcts_1.oflag2[0], indxfile);
-    rdpartialints(objcts_1.olnt, &objcts_1.ofval[0], indxfile);
-    rdpartialints(objcts_1.olnt, &objcts_1.otval[0], indxfile);
-    rdints(objcts_1.olnt, &objcts_1.osize[0], indxfile);
-    rdpartialints(objcts_1.olnt, &objcts_1.ocapac[0], indxfile);
-    rdints(objcts_1.olnt, &objcts_1.oroom[0], indxfile);
-    rdpartialints(objcts_1.olnt, &objcts_1.oadv[0], indxfile);
-    rdpartialints(objcts_1.olnt, &objcts_1.ocan[0], indxfile);
-    rdpartialints(objcts_1.olnt, &objcts_1.oread[0], indxfile);
+    objcts_1.olnt = ReadInteger(indxfile);
+    ReadIntegerArray(objcts_1.olnt, &objcts_1.odesc1[0], indxfile);
+    ReadIntegerArray(objcts_1.olnt, &objcts_1.odesc2[0], indxfile);
+    ReadKeyValueArray(objcts_1.olnt, &objcts_1.odesco[0], indxfile);
+    ReadKeyValueArray(objcts_1.olnt, &objcts_1.oactio[0], indxfile);
+    ReadIntegerArray(objcts_1.olnt, &objcts_1.oflag1[0], indxfile);
+    ReadKeyValueArray(objcts_1.olnt, &objcts_1.oflag2[0], indxfile);
+    ReadKeyValueArray(objcts_1.olnt, &objcts_1.ofval[0], indxfile);
+    ReadKeyValueArray(objcts_1.olnt, &objcts_1.otval[0], indxfile);
+    ReadIntegerArray(objcts_1.olnt, &objcts_1.osize[0], indxfile);
+    ReadKeyValueArray(objcts_1.olnt, &objcts_1.ocapac[0], indxfile);
+    ReadIntegerArray(objcts_1.olnt, &objcts_1.oroom[0], indxfile);
+    ReadKeyValueArray(objcts_1.olnt, &objcts_1.oadv[0], indxfile);
+    ReadKeyValueArray(objcts_1.olnt, &objcts_1.ocan[0], indxfile);
+    ReadKeyValueArray(objcts_1.olnt, &objcts_1.oread[0], indxfile);
 
-    oroom2_1.r2lnt = rdint(indxfile);
-    rdints(oroom2_1.r2lnt, &oroom2_1.oroom2[0], indxfile);
-    rdints(oroom2_1.r2lnt, &oroom2_1.rroom2[0], indxfile);
+    oroom2_1.r2lnt = ReadInteger(indxfile);
+    ReadIntegerArray(oroom2_1.r2lnt, &oroom2_1.oroom2[0], indxfile);
+    ReadIntegerArray(oroom2_1.r2lnt, &oroom2_1.rroom2[0], indxfile);
 
-    cevent_1.clnt = rdint(indxfile);
-    rdints(cevent_1.clnt, &cevent_1.ctick[0], indxfile);
-    rdints(cevent_1.clnt, &cevent_1.cactio[0], indxfile);
-    rdflags(cevent_1.clnt, &cevent_1.cflag[0], indxfile);
+    cevent_1.clnt = ReadInteger(indxfile);
+    ReadIntegerArray(cevent_1.clnt, &cevent_1.ctick[0], indxfile);
+    ReadIntegerArray(cevent_1.clnt, &cevent_1.cactio[0], indxfile);
+    ReadFlagArray(cevent_1.clnt, &cevent_1.cflag[0], indxfile);
 
-    vill_1.vlnt = rdint(indxfile);
-    rdints(vill_1.vlnt, &vill_1.villns[0], indxfile);
-    rdpartialints(vill_1.vlnt, &vill_1.vprob[0], indxfile);
-    rdpartialints(vill_1.vlnt, &vill_1.vopps[0], indxfile);
-    rdints(vill_1.vlnt, &vill_1.vbest[0], indxfile);
-    rdints(vill_1.vlnt, &vill_1.vmelee[0], indxfile);
+    vill_1.vlnt = ReadInteger(indxfile);
+    ReadIntegerArray(vill_1.vlnt, &vill_1.villns[0], indxfile);
+    ReadKeyValueArray(vill_1.vlnt, &vill_1.vprob[0], indxfile);
+    ReadKeyValueArray(vill_1.vlnt, &vill_1.vopps[0], indxfile);
+    ReadIntegerArray(vill_1.vlnt, &vill_1.vbest[0], indxfile);
+    ReadIntegerArray(vill_1.vlnt, &vill_1.vmelee[0], indxfile);
 
-    advs_1.alnt = rdint(indxfile);
-    rdints(advs_1.alnt, &advs_1.aroom[0], indxfile);
-    rdpartialints(advs_1.alnt, &advs_1.ascore[0], indxfile);
-    rdpartialints(advs_1.alnt, &advs_1.avehic[0], indxfile);
-    rdints(advs_1.alnt, &advs_1.aobj[0], indxfile);
-    rdints(advs_1.alnt, &advs_1.aactio[0], indxfile);
-    rdints(advs_1.alnt, &advs_1.astren[0], indxfile);
-    rdpartialints(advs_1.alnt, &advs_1.aflag[0], indxfile);
+    advs_1.alnt = ReadInteger(indxfile);
+    ReadIntegerArray(advs_1.alnt, &advs_1.aroom[0], indxfile);
+    ReadKeyValueArray(advs_1.alnt, &advs_1.ascore[0], indxfile);
+    ReadKeyValueArray(advs_1.alnt, &advs_1.avehic[0], indxfile);
+    ReadIntegerArray(advs_1.alnt, &advs_1.aobj[0], indxfile);
+    ReadIntegerArray(advs_1.alnt, &advs_1.aactio[0], indxfile);
+    ReadIntegerArray(advs_1.alnt, &advs_1.astren[0], indxfile);
+    ReadKeyValueArray(advs_1.alnt, &advs_1.aflag[0], indxfile);
 
-    star_1.mbase = rdint(indxfile);
-    rmsg_1.mlnt = rdint(indxfile);
-    rdints(rmsg_1.mlnt, &rmsg_1.rtext[0], indxfile);
+    star_1.mbase = ReadInteger(indxfile);
+    rmsg_1.mlnt = ReadInteger(indxfile);
+    ReadIntegerArray(rmsg_1.mlnt, &rmsg_1.rtext[0], indxfile);
 
 /* Save location of start of message text */
     rmsg_1.mrloc = ftell(indxfile);
