@@ -55,14 +55,14 @@ CSRC =	actors.c ballop.c clockr.c demons.c dgame.c dinit.c dmain.c\
 	dso1.c dso2.c dso3.c dso4.c dso5.c dso6.c dso7.c dsub.c dverb1.c\
 	dverb2.c gdt.c lightp.c local.c nobjs.c np.c np1.c np2.c np3.c\
 	nrooms.c objcts.c rooms.c sobjs.c supp.c sverbs.c verbs.c villns.c\
-	DatabaseHandler.c
+	DatabaseHandler.c Messages.c
 
 # Object files
 OBJS =	actors.o ballop.o clockr.o demons.o dgame.o dinit.o dmain.o\
 	dso1.o dso2.o dso3.o dso4.o dso5.o dso6.o dso7.o dsub.o dverb1.o\
 	dverb2.o gdt.o lightp.o local.o nobjs.o np.o np1.o np2.o np3.o\
 	nrooms.o objcts.o rooms.o sobjs.o supp.o sverbs.o verbs.o villns.o\
-	DatabaseHandler.o
+	DatabaseHandler.o Messages.o
 
 dungeon: $(OBJS) dtextc.dat
 	$(CC) $(CFLAGS) -o zork $(OBJS)
@@ -121,3 +121,4 @@ sverbs.o: funcs.h vars.h
 verbs.o: funcs.h vars.h
 villns.o: funcs.h vars.h
 DatabaseHandler.o: DatabaseHandler.h funcs.h
+Messages.o: Messages.h funcs.h
