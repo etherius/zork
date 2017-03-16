@@ -37,39 +37,10 @@ FILE *dbfile;
 #define LOCALTEXTFILE "dtextc.dat"
 #endif
 
-/*void ProtectionViolationMessage() {
-    more_output("There appears before you a threatening figure clad all over");
-    more_output("in heavy black armor.  His legs seem like the massive trunk");
-    more_output("of the oak tree.  His broad shoulders and helmeted head loom");
-    more_output("high over your own puny frame, and you realize that his powerful");
-    more_output("arms could easily crush the very life from your body.  There");
-    more_output("hangs from his belt a veritable arsenal of deadly weapons:");
-    more_output("sword, mace, ball and chain, dagger, lance, and trident.");
-    more_output("He speaks with a commanding voice:");
-    more_output("");
-    more_output("                    \"You shall not pass.\"");
-    more_output("");
-    more_output("As he grabs you by the neck all grows dim about you.");
-}
-
-void InitializationFailureMessage() {
-    more_output("Suddenly a sinister, wraithlike figure appears before you,");
-    more_output("seeming to float in the air.  In a low, sorrowful voice he says,");
-    more_output("\"Alas, the very nature of the world has changed, and the dungeon");
-    more_output("cannot be found.  All must now pass away.\"  Raising his oaken staff");
-    more_output("in farewell, he fades into the spreading darkness.  In his place");
-    more_output("appears a tastefully lettered sign reading:");
-    more_output("");
-    more_output("                       INITIALIZATION FAILURE");
-    more_output("");
-    more_output("The darkness becomes all encompassing, and your vision fails.");
-}*/
-
 logical InitialiseGame()
 {
     /* System generated locals */
     int i__1;
-    logical ret_val;
 
     /* Local variables */
     int xmax, r2max, dirmax, recno;
@@ -83,17 +54,14 @@ logical InitialiseGame()
 /* FIRST CHECK FOR PROTECTION VIOLATION */
 
     if (protected()) {
-	goto L10000;
+	   goto L10000;
     }
-/* 						!PROTECTION VIOLATION? */
     ProtectionViolationMessage();
     ExitGame();
 
 /* NOW START INITIALIZATION PROPER */
 
 L10000:
-    ret_val = FALSE_;
-/* 						!ASSUME INIT FAILS. */
     mmax = 1050;
 /* 						!SET UP ARRAY LIMITS. */
     omax = 220;
@@ -296,12 +264,15 @@ L10000:
 
 #ifdef __AMOS__
     if ((dbfile = fdopen(ropen(LOCALTEXTFILE, 0), BINREAD)) == NULL &&
-	(dbfile = fdopen(ropen(TEXTFILE, 0), BINREAD)) == NULL)
+	(dbfile = fdopen(ropen(TEXTFILE, 0), BINREAD)) == NULL) { 
 #else
     if ((dbfile = fopen(LOCALTEXTFILE, BINREAD)) == NULL &&
-	(dbfile = fopen(TEXTFILE, BINREAD)) == NULL)
+	(dbfile = fopen(TEXTFILE, BINREAD)) == NULL) {
 #endif
-	goto L1950;
+	       ErrorOpeningDatabase();
+        InitializationFailureMessage();
+        return FALSE_;
+    }
 
     indxfile = dbfile;
 
@@ -311,7 +282,9 @@ L10000:
 
 /* 						!GET VERSION. */
     if (i != vers_1.vmaj || j != vers_1.vmin) {
-	goto L1925;
+	    WrongVersion(i,j,k,vers_1.vmaj,vers_1.vmin,vers_1.vedit);
+        InitializationFailureMessage();
+        return FALSE_;
     }
 
     state_1.mxscor = ReadInteger(indxfile);
@@ -392,25 +365,19 @@ L10000:
     play_1.here = advs_1.aroom[play_1.winner - 1];
     hack_1.thfpos = objcts_1.oroom[oindex_1.thief - 1];
     state_1.bloc = objcts_1.oroom[oindex_1.ballo - 1];
-    ret_val = TRUE_;
 
-    return ret_val;
-/* INIT, PAGE 6 */
+    return TRUE_;
+}
 
-/* ERRORS-- INIT FAILS. */
+void ErrorOpeningDatabase() {
+    more_output(NULL);
+    printf("I can't open %s.\n", TEXTFILE);
+}
 
-L1925:
+void WrongVersion(int i , int j , int k , int real_i , int real_j , int real_k) {
     more_output(NULL);
     printf("%s is version %1d.%1d%c.\n", TEXTFILE, i, j, k);
     more_output(NULL);
-    printf("I require version %1d.%1d%c.\n", vers_1.vmaj, vers_1.vmin,
-	   vers_1.vedit);
-    goto L1975;
-L1950:
-    more_output(NULL);
-    printf("I can't open %s.\n", TEXTFILE);
-L1975:
-    InitializationFailureMessage();
-    return ret_val;
-
-} /* init_ */
+    printf("I require version %1d.%1d%c.\n", real_i, real_j,
+       real_k);
+}

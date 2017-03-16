@@ -47,6 +47,8 @@ typedef int logical;
 void ExitGame();
 logical InitialiseGame();
 void StartGame();
+void ErrorOpeningDatabase();
+void WrongVersion(int i , int j , int k , int real_i , int real_j , int real_k);
 
 extern logical
 	protected P((void)),
