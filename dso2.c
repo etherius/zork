@@ -114,7 +114,6 @@ logical flg;
 	goto L60;
     }
 /* 						!ENDGAME? */
-    more_output(NULL);
     printf("Your score ");
     if (flg)
 	printf("would be");
@@ -138,7 +137,6 @@ L50:
     return;
 
 L60:
-    more_output(NULL);
     printf("Your score in the endgame ");
     if (flg)
 	printf("would be");

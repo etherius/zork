@@ -207,7 +207,6 @@ L4100:
 /* V74--	VERSION.  PRINT INFO. */
 
 L5000:
-    more_output(NULL);
     printf("V%1d.%1d%c\n", vers_1.vmaj, vers_1.vmin, vers_1.vedit);
     play_1.telflg = TRUE_;
     return ret_val;
@@ -531,7 +530,6 @@ L21000:
     i = k / 60;
     j = k % 60;
 
-    more_output(NULL);
     printf("You have been playing Dungeon for ");
     if (i >= 1) {
 	printf("%d hour", i);
@@ -660,7 +658,6 @@ L25000:
 /* 						!COMPUTE WAIT. */
 
     if (j != 0) {
-	more_output(NULL);
 	printf("You will be cured after %d moves.\n", i);
     }
 
@@ -748,7 +745,6 @@ L26400:
     findex_1.spellf = TRUE_;
 /* 						!TELL HIM. */
     play_1.telflg = TRUE_;
-    more_output(NULL);
     printf("A hollow voice replies:  \"%.6s %.6s\".\n", pp1, ch);
 
     return ret_val;

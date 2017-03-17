@@ -370,14 +370,11 @@ L10000:
 }
 
 void ErrorOpeningDatabase() {
-    more_output(NULL);
     printf("I can't open %s.\n", TEXTFILE);
 }
 
 void WrongVersion(int i , int j , int k , int real_i , int real_j , int real_k) {
-    more_output(NULL);
     printf("%s is version %1d.%1d%c.\n", TEXTFILE, i, j, k);
-    more_output(NULL);
     printf("I require version %1d.%1d%c.\n", real_i, real_j,
        real_k);
 }

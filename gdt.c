@@ -197,7 +197,6 @@ L10000:
 /* 						!COL HDRS. */
     i__1 = k;
     for (i = j; i <= i__1; ++i) {
-	more_output(NULL);
 	printf("%3d", i);
 	for (l = 1; l <= 6; ++l)
 	    printf(" %6d", eqr[i + l * 200 - 201]);
@@ -220,7 +219,6 @@ L11000:
 /* 						!COL HDRS */
     i__1 = k;
     for (i = j; i <= i__1; ++i) {
-	more_output(NULL);
 	printf("%3d%6d%6d%6d%4d%7d%7d%4d%4d%6d%6d %4d%4d%4d%6d\n",
 		i, eqo[i + 1 * 220 - 221], eqo[i + 2 * 220 - 221],
 		eqo[i + 3 * 220 - 221], eqo[i + 4 * 220 - 221],
@@ -246,7 +244,6 @@ L12000:
     more_output("AD#   ROOM  SCORE  VEHIC OBJECT ACTION  STREN  FLAGS");
     i__1 = k;
     for (i = j; i <= i__1; ++i) {
-	more_output(NULL);
 	printf("%3d", i);
 	for (l = 1; l <= 7; ++l)
 	    printf(" %6d", eqa[i + (l << 2) -  5]);
@@ -267,7 +264,6 @@ L13000:
     more_output("CL#   TICK ACTION  FLAG");
     i__1 = k;
     for (i = j; i <= i__1; ++i) {
-	more_output(NULL);
 	printf("%3d %6d %6d     %c\n", i, eqc[i + 1 * 25 - 26],
 		eqc[i + 2 * 25 - 26],
 		cevent_1.cflag[i - 1] ? 'T' : 'F');
@@ -293,7 +289,6 @@ L14000:
 	i__2 = i + 9;
 	l = min(i__2,k);
 /* 						!COMPUTE END OF LINE. */
-	more_output(NULL);
 	printf("%3d-%3d  ", i, l);
 	for (l1 = i; l1 <= l; ++l1)
 	    printf("%7d", exits_1.travel[l1 - 1]);
@@ -306,11 +301,9 @@ L14000:
 /* DH-- DISPLAY HACKS */
 
 L15000:
-    more_output(NULL);
     printf("THFPOS= %d, THFFLG= %c, THFACT= %c\n",
 	   hack_1.thfpos, hack_1.thfflg ? 'T' : 'F',
 	   hack_1.thfact ? 'T' : 'F');
-    more_output(NULL);
     printf("SWDACT= %c, SWDSTA= %d\n", hack_1.swdact ? 'T' : 'F',
 	   hack_1.swdsta);
     goto L2000;
@@ -319,13 +312,10 @@ L15000:
 /* DL-- DISPLAY LENGTHS */
 
 L16000:
-    more_output(NULL);
     printf("R=%d, X=%d, O=%d, C=%d\n", rooms_1.rlnt, exits_1.xlnt,
 	   objcts_1.olnt, cevent_1.clnt);
-    more_output(NULL);
     printf("V=%d, A=%d, M=%d, R2=%d\n", vill_1.vlnt, advs_1.alnt,
 	   rmsg_1.mlnt, oroom2_1.r2lnt);
-    more_output(NULL);
     printf("MBASE=%d, STRBIT=%d\n", star_1.mbase, star_1.strbit);
     goto L2000;
 
@@ -342,7 +332,6 @@ L17000:
 /* 						!COL HDRS */
     i__1 = k;
     for (i = j; i <= i__1; ++i) {
-	more_output(NULL);
 	printf("%3d", i);
 	for (l = 1; l <= 5; ++l)
 	    printf(" %6d", eqv[i + (l << 2) - 5]);
@@ -361,7 +350,6 @@ L18000:
 /* 						!ARGS VALID? */
     i__1 = k;
     for (i = j; i <= i__1; ++i) {
-	more_output(NULL);
 	printf("Flag #%-2d = %c\n", i, flags[i - 1] ? 'T' : 'F');
 /* L18100: */
     }
@@ -371,21 +359,16 @@ L18000:
 /* DS-- DISPLAY STATE */
 
 L19000:
-    more_output(NULL);
     printf("Parse vector= %6d %6d %6d      %c %6d\n",
 	   prsvec_1.prsa, prsvec_1.prso, prsvec_1.prsi,
 	   prsvec_1.prswon ? 'T' : 'F', prsvec_1.prscon);
-    more_output(NULL);
     printf("Play vector=  %6d %6d      %c\n", play_1.winner, play_1.here,
 	    play_1.telflg ? 'T' : 'F');
-    more_output(NULL);
     printf("State vector= %6d %6d %6d %6d %6d %6d %6d %6d %6d\n",
 	   state_1.moves, state_1.deaths, state_1.rwscor, state_1.mxscor,
 	   state_1.mxload, state_1.ltshft, state_1.bloc, state_1.mungrm,
 	   state_1.hs);
-    more_output(NULL);
     printf("              %6d %6d\n", state_1.egscor, state_1.egmxsc);
-    more_output(NULL);
     printf("Scol vector=  %6d %6d %6d\n", screen_1.fromdr,
 	   screen_1.scolrm, screen_1.scolac);
     goto L2000;
@@ -645,7 +628,6 @@ L38000:
     }
     i__1 = k;
     for (i = j; i <= i__1; ++i) {
-	more_output(NULL);
 	printf("#%2d   Room=%6d   Obj=%6d\n", i,
 		oroom2_1.rroom2[i - 1], oroom2_1.oroom2[i - 1]);
 /* L38100: */
@@ -662,7 +644,6 @@ L39000:
 /* 						!VALID? */
     i__1 = k;
     for (i = j; i <= i__1; ++i) {
-	more_output(NULL);
 	printf("Switch #%-2d = %d\n", i, switch_[i - 1]);
 /* L39100: */
     }
@@ -694,7 +675,6 @@ L41000:
     more_output("  RANGE   CONTENTS");
     i__1 = k;
     for (i = j; i <= i__1; i += 10) {
-	more_output(NULL);
 /* Computing MIN */
 	i__2 = i + 9;
 	l = min(i__2,k);
@@ -727,16 +707,12 @@ L43000:
 /* DP--	DISPLAY PARSER STATE */
 
 L44000:
-    more_output(NULL);
     printf("ORPHS= %7d%7d%7d%7d%7d%7d\n",
 	   orp[0], orp[1], orp[2], orp[3], orp[4], last_1.lastit);
-    more_output(NULL);
     printf("PV=    %7d%7d%7d%7d%7d\n",
 	   pvec[0], pvec[1], pvec[2], pvec[3], pvec[4]);
-    more_output(NULL);
     printf("SYN=   %7d%7d%7d%7d%7d%7d\n",
 	   syn[0], syn[1], syn[2], syn[3], syn[4], syn[5]);
-    more_output(NULL);
     printf("              %7d%7d%7d%7d%7d\n",
 	   syn[6], syn[7], syn[8], syn[9], syn[10]);
     goto L2000;
@@ -758,7 +734,6 @@ L45000:
 L46000:
     for (i = 1; i <= 64; i += 8) {
 /* 						!DISPLAY PUZZLE */
-	more_output(NULL);
 	printf(" ");
 	for (j = i; j <= i + 7; ++j)
 	     printf("%3d", puzzle_1.cpvec[j - 1]);

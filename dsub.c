@@ -57,72 +57,61 @@ int s2;
 
 /* rspsb2nl_ Display a substitutable message with an optional newline */
 
-static void rspsb2nl_(n, y, z, nl)
-int n;
-int y;
-int z;
-logical nl;
+static void rspsb2nl_(int msgNum, int y, int z, logical printNewLine)
 {
     const char *zkey = "IanLanceTaylorJr";
-    long x;
+    long msgPosition = (long)msgNum;
 
-    x = (long)n;
+    if (msgPosition > 0) {
+	   msgPosition = rmsg_1.rtext[msgPosition - 1];
+    }
 
-    if (x > 0) {
-	x = rmsg_1.rtext[x - 1];
+    if (msgPosition == 0) {
+	   return;
     }
-/* 						!IF >0, LOOK UP IN RTEXT. */
-    if (x == 0) {
-	return;
-    }
-/* 						!ANYTHING TO DO? */
+
     play_1.telflg = TRUE_;
-/* 						!SAID SOMETHING. */
 
-    x = ((- x) - 1) * 8;
-    if (fseek(dbfile, x + (long)rmsg_1.mrloc, SEEK_SET) == EOF) {
-	fprintf(stderr, "Error seeking database loc %d\n", x);
-	ExitGame();
+    msgPosition = ((- msgPosition) - 1) * 8;
+    if (fseek(dbfile, msgPosition + (long)rmsg_1.mrloc, SEEK_SET) == EOF) {
+	   fprintf(stderr, "Error seeking database loc %d\n", msgPosition);
+	   ExitGame();
     }
-
-    if (nl)
-	more_output(NULL);
 
     while (1) {
-	int i;
+    	int i;
 
-	i = getc(dbfile);
-	if (i == EOF) {
-	    fprintf(stderr, "Error reading database loc %d\n", x);
-	    ExitGame();
-	}
-	i ^= zkey[x & 0xf] ^ (x & 0xff);
-	x = x + 1;
-	if (i == '\0')
-	    break;
-	else if (i == '\n') {
-	    putchar('\n');
-	    if (nl)
-		more_output(NULL);
-	}
-	else if (i == '#' && y != 0) {
-	    long iloc;
+    	i = getc(dbfile);
+    	if (i == EOF) {
+    	    fprintf(stderr, "Error reading database loc %d\n", msgPosition);
+    	    ExitGame();
+    	}
+    	i ^= zkey[msgPosition & 0xf] ^ (msgPosition & 0xff);
+    	msgPosition = msgPosition + 1;
+    	if (i == '\0')
+    	    break;
+    	else if (i == '\n') {
+    	    putchar('\n');
+    	}
 
-	    iloc = ftell(dbfile);
-	    rspsb2nl_(y, 0, 0, 0);
-	    if (fseek(dbfile, iloc, SEEK_SET) == EOF) {
-		fprintf(stderr, "Error seeking database loc %d\n", iloc);
-		ExitGame();
-	    }
-	    y = z;
-	    z = 0;
-	}
-	else
-	    putchar(i);
+    	else if (i == '#' && y != 0) {
+    	    long iloc;
+
+    	    iloc = ftell(dbfile);
+    	    rspsb2nl_(y, 0, 0, 0);
+    	    if (fseek(dbfile, iloc, SEEK_SET) == EOF) {
+        		fprintf(stderr, "Error seeking database loc %d\n", iloc);
+        		ExitGame();
+    	    }
+    	    y = z;
+    	    z = 0;
+    	}
+    	else
+    	    putchar(i);
     }
 
-    if (nl)
-	putchar('\n');
+    if (printNewLine)
+	   putchar('\n');
 }
 
 /* OBJACT-- APPLY OBJECTS FROM PARSE VECTOR */
@@ -173,7 +162,6 @@ int b;
 {
     /* Local variables */
 
-    more_output(NULL);
     printf("PROGRAM ERROR %d, PARAMETER=%d\n", a, b);
 
     if (debug_1.dbgflg != 0) {
