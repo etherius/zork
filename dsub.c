@@ -59,7 +59,7 @@ int s2;
 
 static void rspsb2nl_(int msgNum, int y, int z, logical printNewLine)
 {
-    const char *zkey = "IanLanceTaylorJr";
+    const char *passPhrase = "IanLanceTaylorJr";
     long msgPosition = (long)msgNum;
 
     if (msgPosition > 0) {
@@ -86,7 +86,7 @@ static void rspsb2nl_(int msgNum, int y, int z, logical printNewLine)
     	    fprintf(stderr, "Error reading database loc %d\n", msgPosition);
     	    ExitGame();
     	}
-    	i ^= zkey[msgPosition & 0xf] ^ (msgPosition & 0xff);
+    	i ^= passPhrase[msgPosition & 0xf] ^ (msgPosition & 0xff);
     	msgPosition = msgPosition + 1;
     	if (i == '\0')
     	    break;
@@ -95,9 +95,7 @@ static void rspsb2nl_(int msgNum, int y, int z, logical printNewLine)
     	}
 
     	else if (i == '#' && y != 0) {
-    	    long iloc;
-
-    	    iloc = ftell(dbfile);
+    	    long iloc = ftell(dbfile);
     	    rspsb2nl_(y, 0, 0, 0);
     	    if (fseek(dbfile, iloc, SEEK_SET) == EOF) {
         		fprintf(stderr, "Error seeking database loc %d\n", iloc);
