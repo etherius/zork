@@ -111,7 +111,7 @@ L2200:
 	     prsvec_1.prsa != vindex_1.mungw) {
 	goto L2400;
     }
-    rspsub_(674, odi2);
+    PrintTwoMessages(674, odi2);
 /* 						!PASSES THRU. */
     return ret_val;
 
@@ -125,7 +125,7 @@ L2400:
 /* 						!THRU SCOL? */
     newsta_(prsvec_1.prso, 0, rindex_1.bkbox, 0, 0);
 /* 						!NO, THRU WALL. */
-    rspsub_(675, odo2);
+    PrintTwoMessages(675, odo2);
 /* 						!ENDS UP IN BOX ROOM. */
     cevent_1.ctick[cindex_1.cevscl - 1] = 0;
 /* 						!CANCEL ALARM. */
@@ -140,7 +140,7 @@ L2600:
 /* 						!TRIED TO GO THRU? */
     newsta_(prsvec_1.prso, 0, screen_1.scolrm, 0, 0);
 /* 						!SUCCESS. */
-    rspsub_(676, odo2);
+    PrintTwoMessages(676, odo2);
 /* 						!ENDS UP SOMEWHERE. */
     cevent_1.ctick[cindex_1.cevscl - 1] = 0;
 /* 						!CANCEL ALARM. */
@@ -172,7 +172,7 @@ L3000:
 L3100:
     newsta_(prsvec_1.prso, 0, 0, 0, 0);
 /* 						!YES, BYE BYE TREASURE. */
-    rspsub_(642, odo2);
+    PrintTwoMessages(642, odo2);
     newsta_(oindex_1.zgnom, 0, 0, 0, 0);
 /* 						!BYE BYE GNOME. */
     cevent_1.ctick[cindex_1.cevzgo - 1] = 0;
@@ -242,7 +242,7 @@ L4300:
 	i = 654;
     }
     objcts_1.oflag2[prsvec_1.prso - 1] |= FITEBT;
-    rspsub_(i, odi2);
+    PrintTwoMessages(i, odi2);
     return ret_val;
 
 L4500:
@@ -596,7 +596,7 @@ L12200:
 /* 						!CARRYING? */
     newsta_(i, 0, play_1.here, 0, 0);
 /* 						!DROP OBJ. */
-    rspsub_(760, objcts_1.odesc2[i - 1]);
+    PrintTwoMessages(760, objcts_1.odesc2[i - 1]);
     return ret_val;
 
 L12300:
@@ -606,7 +606,7 @@ L12300:
 	i = 762;
     }
 /* 						!IN ROOM? */
-    rspsub_(j, objcts_1.odesc2[i - 1]);
+    PrintTwoMessages(j, objcts_1.odesc2[i - 1]);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -759,7 +759,7 @@ L18000:
 /* 						!WHEE */
 /* 						! */
     i__1 = findex_1.pnumb + 712;
-    rspsub_(797, i__1);
+    PrintTwoMessages(797, i__1);
     return ret_val;
 
 L18100:
@@ -787,7 +787,7 @@ L18300:
     findex_1.pnumb = prsvec_1.prsi - oindex_1.num1 + 1;
 /* 						!SET UP NEW. */
     i__1 = findex_1.pnumb + 712;
-    rspsub_(808, i__1);
+    PrintTwoMessages(808, i__1);
     return ret_val;
 
 /* O50--	GLOBAL MIRROR */
@@ -845,7 +845,7 @@ L21100:
 L21200:
     newsta_(prsvec_1.prso, 0, 0, 0, 0);
 /* 						!KILL OBJECT. */
-    rspsub_(864, odo2);
+    PrintTwoMessages(864, odo2);
 /* 						!DESCRIBE. */
     return ret_val;
 

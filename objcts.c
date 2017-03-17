@@ -156,7 +156,7 @@ L5100:
 	goto L5200;
     }
 /* 						!YES, OPEN? */
-    rspsub_(525, objcts_1.odesc2[objcts_1.ocan[prsvec_1.prso - 1] - 1]);
+    PrintTwoMessages(525, objcts_1.odesc2[objcts_1.ocan[prsvec_1.prso - 1] - 1]);
 /* 						!INSIDE, CLOSED, PUNT. */
     return ret_val;
 
@@ -179,7 +179,7 @@ L5400:
 	goto L5500;
     }
 /* 						!IN BOTTLE? */
-    rspsub_(297, odi2);
+    PrintTwoMessages(297, odi2);
 /* 						!WONT GO ELSEWHERE. */
     newsta_(prsvec_1.prso, 0, 0, 0, 0);
 /* 						!VANISH WATER. */
@@ -224,7 +224,7 @@ L5700:
 L5800:
     newsta_(oindex_1.water, 0, 0, av, 0);
 /* 						!WATER INTO VEHICLE. */
-    rspsub_(296, objcts_1.odesc2[av - 1]);
+    PrintTwoMessages(296, objcts_1.odesc2[av - 1]);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -350,7 +350,7 @@ L15500:
     if ((objcts_1.oflag1[prsvec_1.prsi - 1] & flobts) == flobts) {
 	goto L15600;
     }
-    rspsub_(298, odi2);
+    PrintTwoMessages(298, odi2);
 /* 						!CANT MELT WITH THAT. */
     return ret_val;
 
@@ -892,7 +892,7 @@ L56200:
     findex_1.mdir = (findex_1.mdir + 45 + (i - 830) * 270) % 360;
 /* 						!CALCULATE NEW DIR. */
     i__1 = findex_1.mdir / 45 + 695;
-    rspsub_(734, i__1);
+    PrintTwoMessages(734, i__1);
 /* 						!TELL NEW DIR. */
     if (findex_1.wdopnf) {
 	PrintMessage(730);
@@ -969,7 +969,7 @@ L57400:
 	j = 740;
     }
 /* 						!POLE UP, WOBBLES. */
-    rspsub_(j, i);
+    PrintTwoMessages(j, i);
 /* 						!DESCRIBE. */
     findex_1.mloc = nloc;
     if (findex_1.mloc != rindex_1.mrg) {

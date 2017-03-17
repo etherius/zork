@@ -263,7 +263,7 @@ L100:
 	goto L2000;
     }
 /* 						!DEFENDER ALIVE? */
-    rspsub_(592, dv);
+    PrintTwoMessages(592, dv);
 /* 						!VILLAIN DEAD. */
     return ret_val;
 
@@ -282,7 +282,7 @@ L1000:
 	goto L1200;
     }
     objcts_1.oflag2[v - 1] &= ~ STAGBT;
-    rspsub_(594, dv);
+    PrintTwoMessages(594, dv);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -311,7 +311,7 @@ L2000:
 /* 						!DEF ALIVE? */
     res = rkill;
     if (hflg) {
-	rspsub_(595, dv);
+	PrintTwoMessages(595, dv);
     }
 /* 						!DEADER. */
     goto L3000;
@@ -379,7 +379,7 @@ L2600:
     if (! (hflg) && dweap != 0) {
 	j = objcts_1.odesc2[dweap - 1];
     }
-    rspsub_(i, j);
+    PrintTwoMessages(i, j);
 /* 						!PRESENT RESULT. */
 /* BLOW, PAGE 5 */
 
@@ -448,7 +448,7 @@ L3600:
 	    abs(i__1));
 /* 						!GET NEW. */
     if (dweap != 0) {
-	rspsub_(605, objcts_1.odesc2[dweap - 1]);
+	PrintTwoMessages(605, objcts_1.odesc2[dweap - 1]);
     }
 /* BLOW, PAGE 6 */
 
@@ -466,7 +466,7 @@ L4000:
     }
 /* 						!DEAD? */
     objcts_1.oflag2[v - 1] &= ~ FITEBT;
-    rspsub_(572, dv);
+    PrintTwoMessages(572, dv);
 /* 						!HE DIES. */
     newsta_(v, 0, 0, 0, 0);
 /* 						!MAKE HIM DISAPPEAR. */

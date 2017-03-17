@@ -20,29 +20,15 @@ extern FILE *dbfile;
 
 static void PrintGenericMessage P((int, int, int, logical));
 
-/* RSPEAK-- OUTPUT RANDOM MESSAGE ROUTINE */
-
-/* CALLED BY-- */
-
-/* 	CALL RSPEAK(MSGNUM) */
-
 void PrintMessage(int mesgNum)
 {
     PrintGenericMessage(mesgNum, NO_MESSAGE, NO_MESSAGE, 1);
-} /* PrintMessage */
+}
 
-/* RSPSUB-- OUTPUT RANDOM MESSAGE WITH SUBSTITUTABLE ARGUMENT */
-
-/* CALLED BY-- */
-
-/* 	CALL RSPSUB(MSGNUM,SUBNUM) */
-
-void rspsub_(n, s1)
-int n;
-int s1;
+void PrintTwoMessages(int firstMsgNum, int secondMsgNum)
 {
-    PrintGenericMessage(n, s1, NO_MESSAGE, 1);
-} /* rspsub_ */
+    PrintGenericMessage(firstMsgNum, secondMsgNum, NO_MESSAGE, 1);
+} /* PrintTwoMessages */
 
 /* RSPSB2-- OUTPUT RANDOM MESSAGE WITH UP TO TWO SUBSTITUTABLE ARGUMENTS */
 
@@ -295,7 +281,7 @@ int desc;
 	goto L100;
     }
 /* 						!HIMSELF? */
-    rspsub_(432, objcts_1.odesc2[advs_1.aobj[play_1.winner - 1] - 1]);
+    PrintTwoMessages(432, objcts_1.odesc2[advs_1.aobj[play_1.winner - 1] - 1]);
 /* 						!NO, SAY WHO DIED. */
     newsta_(advs_1.aobj[play_1.winner - 1], 0, 0, 0, 0);
 /* 						!SEND TO HYPER SPACE. */
@@ -572,7 +558,7 @@ L400:
 /* 						!OUTPUT DESCRIPTION. */
 L500:
     if (advs_1.avehic[play_1.winner - 1] != 0) {
-	rspsub_(431, objcts_1.odesc2[advs_1.avehic[play_1.winner - 1] -
+	PrintTwoMessages(431, objcts_1.odesc2[advs_1.avehic[play_1.winner - 1] -
 		1]);
     }
 

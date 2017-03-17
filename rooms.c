@@ -83,7 +83,7 @@ L1000:
 	i = 12;
     }
 /* 						!IF OPEN, AJAR. */
-    rspsub_(11, i);
+    PrintTwoMessages(11, i);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -100,7 +100,7 @@ L2000:
 	i = 12;
     }
 /* 						!IF OPEN, AJAR. */
-    rspsub_(14, i);
+    PrintTwoMessages(14, i);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -395,7 +395,7 @@ L14100:
 	goto L14200;
     }
 /* 						!TURN ON? */
-    rspsub_(294, j);
+    PrintTwoMessages(294, j);
 /* 						!BOOM */
 /* 						! */
     jigsup_(44);
@@ -406,7 +406,7 @@ L14200:
 	return ret_val;
     }
 /* 						!WALKIN? */
-    rspsub_(295, j);
+    PrintTwoMessages(295, j);
 /* 						!BOOM */
 /* 						! */
     jigsup_(44);
@@ -449,7 +449,7 @@ L16000:
 	i = 12;
     }
 /* 						!IF OPEN, OPEN. */
-    rspsub_(45, i);
+    PrintTwoMessages(45, i);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -645,7 +645,7 @@ L24000:
 	PrintMessage(i);
 /* 						!SET STAGE, */
 	i = 0;
-	rspsub_(502, objcts_1.odesc2[j - 1]);
+	PrintTwoMessages(502, objcts_1.odesc2[j - 1]);
 /* 						!DESCRIBE. */
 L24200:
 	;

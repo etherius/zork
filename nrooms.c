@@ -146,7 +146,7 @@ L46000:
     PrintMessage(i);
 /* 						!DESCRIBE POLE. */
     i__1 = findex_1.mdir / 45 + 695;
-    rspsub_(694, i__1);
+    PrintTwoMessages(694, i__1);
 /* 						!DESCRIBE ARROW. */
     return ret_val;
 /* RAPPL2, PAGE 4 */
@@ -169,7 +169,7 @@ L47000:
     }
     i = 703;
 L47200:
-    rspsub_(i, objcts_1.odesc2[j - 1]);
+    PrintTwoMessages(i, objcts_1.odesc2[j - 1]);
 /* 						!DESCRIBE BEAM. */
     lookto_(rindex_1.mra, 0, 0, 0, 0);
 /* 						!LOOK NORTH. */
@@ -187,7 +187,7 @@ L48000:
     if ((objcts_1.oflag2[oindex_1.tomb - 1] & OPENBT) != 0) {
 	i = 12;
     }
-    rspsub_(705, i);
+    PrintTwoMessages(705, i);
     return ret_val;
 
 /* R49--	SOUTH CORRIDOR */
@@ -205,7 +205,7 @@ L49000:
 	i = 12;
     }
     if (findex_1.lcell == 4) {
-	rspsub_(707, i);
+	PrintTwoMessages(707, i);
     }
 /* 						!DESCRIBE ODOOR IF THERE. */
     return ret_val;
@@ -232,7 +232,7 @@ L50100:
     if ((objcts_1.oflag2[oindex_1.qdoor - 1] & OPENBT) != 0) {
 	i = 12;
     }
-    rspsub_(708, i);
+    PrintTwoMessages(708, i);
     return ret_val;
 /* RAPPL2, PAGE 5 */
 
@@ -275,7 +275,7 @@ L52000:
 	i = 12;
     }
 /* 						!CDOOR IS OPEN/CLOSED. */
-    rspsub_(711, i);
+    PrintTwoMessages(711, i);
     return ret_val;
 
 /* R53--	PARAPET */
@@ -283,7 +283,7 @@ L52000:
 L53000:
     if (prsvec_1.prsa == vindex_1.lookw) {
 	i__1 = findex_1.pnumb + 712;
-	rspsub_(712, i__1);
+	PrintTwoMessages(712, i__1);
     }
     return ret_val;
 
@@ -306,7 +306,7 @@ L54000:
 	i = 12;
     }
     if (findex_1.lcell == 4) {
-	rspsub_(723, i);
+	PrintTwoMessages(723, i);
     }
 /*						!DESCRIBE. */
     return ret_val;
@@ -332,7 +332,7 @@ L56000:
     if ((objcts_1.oflag2[oindex_1.odoor - 1] & OPENBT) != 0) {
 	i = 12;
     }
-    rspsub_(725, i);
+    PrintTwoMessages(725, i);
     return ret_val;
 /* RAPPL2, PAGE 6 */
 
@@ -360,7 +360,7 @@ L58000:
     if ((objcts_1.oflag2[oindex_1.tomb - 1] & OPENBT) != 0) {
 	i = 12;
     }
-    rspsub_(792, i);
+    PrintTwoMessages(792, i);
     return ret_val;
 
 /* R59--	PUZZLE SIDE ROOM */
@@ -445,7 +445,7 @@ int ht;
 	goto L100;
     }
 /* 						!MIRROR N-S? */
-    rspsub_(847, dir);
+    PrintTwoMessages(847, dir);
 /* 						!YES, HE SEES PANEL */
     rspsb2_(848, dir, dir);
 /* 						!AND NARROW ROOMS. */
@@ -460,7 +460,7 @@ L100:
 	mrbf = 1;
     }
     i__1 = mrbf + 849;
-    rspsub_(i__1, dir);
+    PrintTwoMessages(i__1, dir);
 /* 						!DESCRIBE. */
     if (m1 == 1 && findex_1.mropnf) {
 	i__1 = mrbf + 823;

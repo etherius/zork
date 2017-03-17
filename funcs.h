@@ -78,7 +78,7 @@ extern void
 	rdline_ P((char *, int)),
 	PrintMessage P((int)),
 	rspsb2_ P((int, int, int)),
-	rspsub_ P((int, int)),
+	PrintTwoMessages P((int, int)),
 	rstrgm_ P((void)),
 	savegm_ P((void)),
 	score_ P((logical)),

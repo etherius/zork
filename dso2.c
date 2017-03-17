@@ -85,7 +85,7 @@ L600:
     return ret_val;
 
 L800:
-    rspsub_(428, objcts_1.odesc2[j - 1]);
+    PrintTwoMessages(428, objcts_1.odesc2[j - 1]);
 /* 						!WRONG VEHICLE. */
     return ret_val;
 } /* moveto_ */

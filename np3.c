@@ -329,7 +329,7 @@ int sflag;
     if ((objcts_1.oflag2[x - 1] & OPENBT) != 0) {
 	goto L500;
     }
-    rspsub_(566, odo2);
+    PrintTwoMessages(566, odo2);
 /* 						!CANT REACH. */
     return ret_val;
 
@@ -360,7 +360,7 @@ L500:
     if ((sflag & VCBIT) == 0) {
 	goto L4000;
     }
-    rspsub_(445, odo2);
+    PrintTwoMessages(445, odo2);
     return ret_val;
 
 /* 1000--	IT SHOULD NOT BE IN THE ROOM. */
@@ -374,7 +374,7 @@ L1000:
     if (schlst_(0, 0, play_1.here, 0, 0, obj) <= 0) {
 	goto L4000;
     }
-    rspsub_(665, odo2);
+    PrintTwoMessages(665, odo2);
     return ret_val;
 /* TAKEIT, PAGE 3 */
 
