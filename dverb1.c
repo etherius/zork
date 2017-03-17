@@ -39,7 +39,7 @@ L100:
 	goto L400;
     }
 /* 						!HIS VEHICLE? */
-    rspeak_(672);
+    PrintMessage(672);
 /* 						!DUMMY. */
     return ret_val;
 
@@ -49,7 +49,7 @@ L400:
     }
     if (! oappli_(oa, 0)) {
 	i__1 = rnd_(5) + 552;
-	rspeak_(i__1);
+	PrintMessage(i__1);
     }
     return ret_val;
 
@@ -60,7 +60,7 @@ L500:
 	goto L600;
     }
     if (objcts_1.oadv[prsvec_1.prso - 1] == play_1.winner) {
-	rspeak_(557);
+	PrintMessage(557);
     }
 /* 						!ALREADY GOT IT? */
     return ret_val;
@@ -71,7 +71,7 @@ L600:
 	     <= state_1.mxload) {
 	goto L700;
     }
-    rspeak_(558);
+    PrintMessage(558);
 /* 						!TOO MUCH WEIGHT. */
     return ret_val;
 
@@ -90,7 +90,7 @@ L700:
     objcts_1.ofval[prsvec_1.prso - 1] = 0;
 /* 						!CANT BE SCORED AGAIN. */
     if (flg) {
-	rspeak_(559);
+	PrintMessage(559);
     }
 /* 						!TELL TAKEN. */
     return ret_val;
@@ -180,7 +180,7 @@ L400:
     return ret_val;
 
 L1000:
-    rspeak_(527);
+    PrintMessage(527);
 /* 						!DONT HAVE IT. */
     return ret_val;
 
@@ -205,7 +205,7 @@ logical flg;
 	goto L200;
     }
     if (! objact_()) {
-	rspeak_(560);
+	PrintMessage(560);
     }
 /* 						!STAR */
     ret_val = TRUE_;
@@ -218,7 +218,7 @@ L200:
 	    VEHBT) != 0) {
 	goto L300;
     }
-    rspeak_(561);
+    PrintMessage(561);
 /* 						!CANT PUT IN THAT. */
     return ret_val;
 
@@ -227,7 +227,7 @@ L300:
 	goto L400;
     }
 /* 						!IS IT OPEN? */
-    rspeak_(562);
+    PrintMessage(562);
 /* 						!NO, JOKE */
     return ret_val;
 
@@ -236,7 +236,7 @@ L400:
 	goto L500;
     }
 /* 						!INTO ITSELF? */
-    rspeak_(563);
+    PrintMessage(563);
 /* 						!YES, JOKE. */
     return ret_val;
 
@@ -256,7 +256,7 @@ L600:
 	    prsvec_1.prsi - 1]) {
 	goto L700;
     }
-    rspeak_(565);
+    PrintMessage(565);
 /* 						!THEN CANT DO IT. */
     return ret_val;
 
@@ -441,7 +441,7 @@ L3000:
 /* 						!CHOOSE MESSAGE. */
 L4000:
     if (f) {
-	rspeak_(i);
+	PrintMessage(i);
     }
 /* 						!IF NOTHING, REPORT. */
 } /* valuac_ */

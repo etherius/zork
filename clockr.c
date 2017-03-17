@@ -77,7 +77,7 @@ L1000:
 L2000:
     if (play_1.here == rindex_1.maint) {
 	i__1 = findex_1.rvmnt / 2 + 71;
-	rspeak_(i__1);
+	PrintMessage(i__1);
     }
 /* 						!DESCRIBE. */
     ++findex_1.rvmnt;
@@ -107,7 +107,7 @@ L3000:
 /* CEV4--	MATCH.  OUT IT GOES. */
 
 L4000:
-    rspeak_(153);
+    PrintMessage(153);
 /* 						!MATCH IS OUT. */
     objcts_1.oflag1[oindex_1.match - 1] &= ~ ONBT;
     return;
@@ -158,7 +158,7 @@ L6000:
 /* 						!IN BALLOON? */
     if (play_1.here == rindex_1.ledg2 || play_1.here == rindex_1.ledg3 || 
 	    play_1.here == rindex_1.ledg4 || play_1.here == rindex_1.vlbot) {
-	rspeak_(530);
+	PrintMessage(530);
     }
 /* 						!ON LEDGE, DESCRIBE. */
     return;
@@ -170,7 +170,7 @@ L6200:
 	goto L6250;
     }
 /* 						!IN BALLOON.  INFLATED? */
-    rspeak_(531);
+    PrintMessage(531);
 /* 						!YES, LANDED. */
     f = rmdesc_(0);
 /* 						!DESCRIBE. */
@@ -200,7 +200,7 @@ L6300:
 /* 						!IS HE IN BALLOON? */
     if (play_1.here == rindex_1.ledg2 || play_1.here == rindex_1.ledg3 || 
 	    play_1.here == rindex_1.ledg4 || play_1.here == rindex_1.vlbot) {
-	rspeak_(533);
+	PrintMessage(533);
     }
 /* 						!IF ON LEDGE, DESCRIBE. */
     return;
@@ -208,7 +208,7 @@ L6300:
 L6400:
     f = moveto_(state_1.bloc, play_1.winner);
 /* 						!IN BALLOON, MOVE HIM. */
-    rspeak_(534);
+    PrintMessage(534);
 /* 						!DESCRIBE. */
     f = rmdesc_(0);
     return;
@@ -237,7 +237,7 @@ L6500:
 /* 						!WAS HE IN IT? */
     if (play_1.here == rindex_1.ledg2 || play_1.here == rindex_1.ledg3 || 
 	    play_1.here == rindex_1.ledg4 || play_1.here == rindex_1.vlbot) {
-	rspeak_(535);
+	PrintMessage(535);
     }
 /* 						!IF HE CAN SEE, DESCRIBE. */
     return;
@@ -257,7 +257,7 @@ L6600:
 /* 						!IN BALLOON? */
     if (play_1.here == rindex_1.ledg2 || play_1.here == rindex_1.ledg3 || 
 	    play_1.here == rindex_1.ledg4 || play_1.here == rindex_1.vlbot) {
-	rspeak_(537);
+	PrintMessage(537);
     }
 /* 						!CAN HE SEE IT? */
     return;
@@ -265,7 +265,7 @@ L6600:
 L6650:
     f = moveto_(state_1.bloc, play_1.winner);
 /* 						!MOVE PLAYER. */
-    rspeak_(538);
+    PrintMessage(538);
 /* 						!DESCRIBE. */
     f = rmdesc_(0);
     return;
@@ -282,7 +282,7 @@ L6700:
 /* 						!IN BALLOON? */
     if (play_1.here == rindex_1.ledg2 || play_1.here == rindex_1.ledg3 || 
 	    play_1.here == rindex_1.ledg4 || play_1.here == rindex_1.vlbot) {
-	rspeak_(539);
+	PrintMessage(539);
     }
 /* 						!NO, STRANDED. */
     cevent_1.ctick[cindex_1.cevvlg - 1] = 10;
@@ -292,7 +292,7 @@ L6700:
 L6750:
     f = moveto_(state_1.bloc, play_1.winner);
 /* 						!MOVE TO NEW ROOM. */
-    rspeak_(540);
+    PrintMessage(540);
 /* 						!DESCRIBE. */
     f = rmdesc_(0);
     return;
@@ -314,7 +314,7 @@ L6800:
 /* 						!IN BALLOON? */
     if (play_1.here == rindex_1.ledg2 || play_1.here == rindex_1.ledg3 || 
 	    play_1.here == rindex_1.ledg4 || play_1.here == rindex_1.vlbot) {
-	rspeak_(541);
+	PrintMessage(541);
     }
 /* 						!IF CAN SEE, DESCRIBE. */
     return;
@@ -322,7 +322,7 @@ L6800:
 L6850:
     f = moveto_(state_1.bloc, play_1.winner);
 /* 						!MOVE PLAYER. */
-    rspeak_(542);
+    PrintMessage(542);
     f = rmdesc_(0);
     return;
 /* CEVAPP, PAGE 4 */
@@ -383,7 +383,7 @@ L8000:
     return;
 
 L8100:
-    rspeak_(151);
+    PrintMessage(151);
 /* 						!BOOM. */
     state_1.mungrm = br;
 /* 						!SAVE ROOM THAT BLEW. */
@@ -431,7 +431,7 @@ L8200:
 L8500:
     if (qhere_(oindex_1.fuse, play_1.here) || objcts_1.oadv[oindex_1.fuse - 
 	    1] == play_1.winner) {
-	rspeak_(152);
+	PrintMessage(152);
     }
     newsta_(oindex_1.fuse, 0, 0, 0, 0);
 /* 						!KILL FUSE. */
@@ -447,7 +447,7 @@ L9000:
 	goto L9100;
     }
 /* 						!WAS HE THERE? */
-    rspeak_(110);
+    PrintMessage(110);
 /* 						!NO, NARROW ESCAPE. */
     return;
 
@@ -465,7 +465,7 @@ L9200:
 	goto L9300;
     }
 /* 						!TIED TO LEDGE? */
-    rspeak_(112);
+    PrintMessage(112);
 /* 						!NO, NO PLACE TO LAND. */
     return;
 
@@ -493,7 +493,7 @@ L10000:
 	goto L10100;
     }
 /* 						!IS HE PRESENT? */
-    rspeak_(115);
+    PrintMessage(115);
 /* 						!LET HIM KNOW. */
     if (state_1.mungrm == rindex_1.msafe) {
 	cevent_1.ctick[cindex_1.cevled - 1] = 8;
@@ -558,7 +558,7 @@ L14000:
 L15000:
     findex_1.endgmf = TRUE_;
 /* 						!WE'RE IN ENDGAME. */
-    rspeak_(119);
+    PrintMessage(119);
 /* 						!INFORM OF ENDGAME. */
     return;
 /* CEVAPP, PAGE 7 */
@@ -569,7 +569,7 @@ L16000:
     cevent_1.cflag[cindex_1.cevfor - 1] = play_1.here == rindex_1.mtree || 
 	    play_1.here >= rindex_1.fore1 && play_1.here < rindex_1.clear;
     if (cevent_1.cflag[cindex_1.cevfor - 1] && prob_(10, 10)) {
-	rspeak_(635);
+	PrintMessage(635);
     }
     return;
 
@@ -594,7 +594,7 @@ L18000:
     newsta_(oindex_1.zgnom, 0, rindex_1.bktwi, 0, 0);
 /* 						!PLACE IN TWI. */
     if (play_1.here == rindex_1.bktwi) {
-	rspeak_(637);
+	PrintMessage(637);
     }
 /* 						!ANNOUNCE. */
     return;
@@ -605,7 +605,7 @@ L19000:
     newsta_(oindex_1.zgnom, 0, 0, 0, 0);
 /* 						!VANISH. */
     if (play_1.here == rindex_1.bktwi) {
-	rspeak_(638);
+	PrintMessage(638);
     }
 /* 						!ANNOUNCE. */
     return;
@@ -631,7 +631,7 @@ L20000:
     return;
 
 L20100:
-    rspeak_(727);
+    PrintMessage(727);
 /* 						!ANNOUNCE. */
 L20200:
     i__1 = objcts_1.olnt;
@@ -686,11 +686,11 @@ L21000:
     findex_1.mropnf = FALSE_;
 /* 						!MIRROR IS CLOSED. */
     if (play_1.here == rindex_1.mrant) {
-	rspeak_(728);
+	PrintMessage(728);
     }
 /* 						!DESCRIBE BUTTON. */
     if (play_1.here == rindex_1.inmir || mrhere_(play_1.here) == 1) {
-	rspeak_(729);
+	PrintMessage(729);
     }
     return;
 /* CEVAPP, PAGE 9 */
@@ -699,7 +699,7 @@ L21000:
 
 L22000:
     if (findex_1.wdopnf) {
-	rspeak_(730);
+	PrintMessage(730);
     }
 /* 						!DESCRIBE. */
     findex_1.wdopnf = FALSE_;
@@ -713,9 +713,9 @@ L23000:
 	return;
     }
 /* 						!IF PLAYER LEFT, DIE. */
-    rspeak_(769);
+    PrintMessage(769);
     i__1 = findex_1.quesno + 770;
-    rspeak_(i__1);
+    PrintMessage(i__1);
     cevent_1.ctick[cindex_1.cevinq - 1] = 2;
     return;
 
@@ -730,7 +730,7 @@ L24000:
 	goto L24100;
     }
     if (findex_1.follwf) {
-	rspeak_(811);
+	PrintMessage(811);
     }
 /* 						!WONT GO TO CELLS. */
     findex_1.follwf = FALSE_;
@@ -750,7 +750,7 @@ L24100:
 	}
 /* L24200: */
     }
-    rspeak_(i);
+    PrintMessage(i);
     newsta_(oindex_1.master, 0, play_1.here, 0, 0);
 /* 						!MOVE MASTER OBJECT. */
     advs_1.aroom[aindex_1.amastr - 1] = play_1.here;
@@ -793,7 +793,7 @@ int tickln;
 L100:
     if (objcts_1.oroom[obj - 1] == play_1.here || objcts_1.oadv[obj - 1] == 
 	    play_1.winner) {
-	rspeak_(ticks[*ctr + tickln / 2]);
+	PrintMessage(ticks[*ctr + tickln / 2]);
     }
     return;
 

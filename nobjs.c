@@ -74,13 +74,13 @@ L1000:
 	goto L1100;
     }
 /* 						!EAT? */
-    rspeak_(639);
+    PrintMessage(639);
 /* 						!JOKE. */
     return ret_val;
 
 L1100:
     if (prsvec_1.prsa == vindex_1.burnw) {
-	rspeak_(640);
+	PrintMessage(640);
     }
 /* 						!BURN?  JOKE. */
     goto L10;
@@ -102,7 +102,7 @@ L2100:
 	     {
 	goto L2200;
     }
-    rspeak_(673);
+    PrintMessage(673);
 /* 						!HAND PASSES THRU. */
     return ret_val;
 
@@ -149,7 +149,7 @@ L2600:
     return ret_val;
 
 L2900:
-    rspeak_(213);
+    PrintMessage(213);
 /* 						!CANT DO IT. */
     return ret_val;
 /* NOBJS, PAGE 4 */
@@ -193,7 +193,7 @@ L3200:
     return ret_val;
 
 L3300:
-    rspeak_(644);
+    PrintMessage(644);
 /* 						!GNOME IS IMPATIENT. */
     return ret_val;
 
@@ -207,7 +207,7 @@ L4000:
 	goto L4100;
     }
 /* 						!OPEN ALREADY? */
-    rspeak_(649);
+    PrintMessage(649);
 /* 						!YES. */
     return ret_val;
 
@@ -216,7 +216,7 @@ L4100:
 	goto L4200;
     }
 /* 						!WITH SOMETHING? */
-    rspeak_(650);
+    PrintMessage(650);
 /* 						!NO, CANT. */
     return ret_val;
 
@@ -225,7 +225,7 @@ L4200:
 	goto L4300;
     }
 /* 						!WITH HANDS? */
-    rspeak_(651);
+    PrintMessage(651);
 /* 						!NOT RECOMMENDED. */
     return ret_val;
 
@@ -263,7 +263,7 @@ L4600:
 	goto L4700;
     }
 /* 						!WAS CANARY INSIDE? */
-    rspeak_(objcts_1.odesco[oindex_1.bcana - 1]);
+    PrintMessage(objcts_1.odesco[oindex_1.bcana - 1]);
 /* 						!YES, DESCRIBE RESULT. */
     objcts_1.otval[oindex_1.bcana - 1] = 1;
     return ret_val;
@@ -300,7 +300,7 @@ L5000:
 	goto L5100;
     }
 /* 						!RIGHT ONE? */
-    rspeak_(645);
+    PrintMessage(645);
 /* 						!NO, BAD NEWS. */
     return ret_val;
 
@@ -309,7 +309,7 @@ L5100:
 	    rindex_1.fore1 && play_1.here < rindex_1.clear)) {
 	goto L5200;
     }
-    rspeak_(646);
+    PrintMessage(646);
 /* 						!NO, MEDIOCRE NEWS. */
     return ret_val;
 
@@ -331,7 +331,7 @@ L6000:
 	     prsvec_1.prsa != vindex_1.clmbdw) {
 	goto L10;
     }
-    rspeak_(648);
+    PrintMessage(648);
 /* 						!OH YEAH? */
     return ret_val;
 
@@ -342,7 +342,7 @@ L7000:
 	    play_1.here) != 0 || prsvec_1.prsa != vindex_1.pushw) {
 	goto L7100;
     }
-    rspeak_(860);
+    PrintMessage(860);
 /* 						!PUSHED MIRROR WALL. */
     return ret_val;
 
@@ -350,7 +350,7 @@ L7100:
     if ((rooms_1.rflag[play_1.here - 1] & RNWALL) == 0) {
 	goto L10;
     }
-    rspeak_(662);
+    PrintMessage(662);
 /* 						!NO WALL. */
     return ret_val;
 /* NOBJS, PAGE 6 */
@@ -362,7 +362,7 @@ L8000:
 	goto L8100;
     }
 /* 						!FIND? */
-    rspeak_(666);
+    PrintMessage(666);
     return ret_val;
 
 L8100:
@@ -370,7 +370,7 @@ L8100:
 	goto L10;
     }
 /* 						!EXAMINE? */
-    rspeak_(667);
+    PrintMessage(667);
     return ret_val;
 
 /* O40--	PUZZLE/SCOL WALLS */
@@ -411,7 +411,7 @@ L9200:
 /* 						!PROCESS. */
 
 L9250:
-    rspeak_(876);
+    PrintMessage(876);
 /* 						!CLEAR CORRIDOR. */
     return ret_val;
 
@@ -421,7 +421,7 @@ L9300:
     }
 /* 						!MOVABLE, ROOM TO MOVE? */
 L9350:
-    rspeak_(877);
+    PrintMessage(877);
 /* 						!IMMOVABLE, NO ROOM. */
     return ret_val;
 
@@ -483,7 +483,7 @@ L10000:
 	i = 750;
     }
 /* 						!ALREADY UP? */
-    rspeak_(i);
+    PrintMessage(i);
     findex_1.poleuf = 2;
 /* 						!POLE IS RAISED. */
     return ret_val;
@@ -497,7 +497,7 @@ L10100:
 	goto L10200;
     }
 /* 						!ALREADY LOWERED? */
-    rspeak_(751);
+    PrintMessage(751);
 /* 						!CANT DO IT. */
     return ret_val;
 
@@ -508,7 +508,7 @@ L10200:
 /* 						!MIRROR N-S? */
     findex_1.poleuf = 0;
 /* 						!YES, LOWER INTO */
-    rspeak_(752);
+    PrintMessage(752);
 /* 						!CHANNEL. */
     return ret_val;
 
@@ -518,12 +518,12 @@ L10300:
     }
     findex_1.poleuf = 0;
 /* 						!LOWER INTO HOLE. */
-    rspeak_(753);
+    PrintMessage(753);
     return ret_val;
 
 L10400:
     i__1 = findex_1.poleuf + 753;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!POLEUF = 1 OR 2. */
     findex_1.poleuf = 1;
 /* 						!NOW ON FLOOR. */
@@ -540,7 +540,7 @@ L11000:
 	goto L11300;
     }
 /* 						!ALREADY PUSHED? */
-    rspeak_(756);
+    PrintMessage(756);
 /* 						!BUTTON GOES IN. */
     i__1 = objcts_1.olnt;
     for (i = 1; i <= i__1; ++i) {
@@ -550,7 +550,7 @@ L11000:
 	}
 /* L11100: */
     }
-    rspeak_(757);
+    PrintMessage(757);
 /* 						!NOTHING IN BEAM. */
     return ret_val;
 
@@ -563,7 +563,7 @@ L11200:
     return ret_val;
 
 L11300:
-    rspeak_(758);
+    PrintMessage(758);
 /* 						!MIRROR ALREADYOPEN. */
     return ret_val;
 /* NOBJS, PAGE 8 */
@@ -574,7 +574,7 @@ L12000:
     if (prsvec_1.prsa != vindex_1.takew || prsvec_1.prso != oindex_1.rbeam) {
 	goto L12100;
     }
-    rspeak_(759);
+    PrintMessage(759);
 /* 						!TAKE BEAM, JOKE. */
     return ret_val;
 
@@ -617,7 +617,7 @@ L13000:
 	    == rindex_1.cell || play_1.here == rindex_1.scorr)) {
 	goto L13100;
     }
-    rspeak_(763);
+    PrintMessage(763);
 /* 						!DOOR NOT THERE. */
     return ret_val;
 
@@ -628,7 +628,7 @@ L13100:
 /* 						!OPEN/CLOSE? */
     if (play_1.here == rindex_1.ncell && (objcts_1.oflag2[oindex_1.odoor - 1] 
 	    & OPENBT) != 0) {
-	rspeak_(766);
+	PrintMessage(766);
     }
     return ret_val;
 
@@ -639,7 +639,7 @@ L14000:
 
 	goto L14100;
     }
-    rspeak_(767);
+    PrintMessage(767);
 /* 						!DOOR WONT MOVE. */
     return ret_val;
 
@@ -660,16 +660,16 @@ L14100:
 /* 						!SELECT QUESTION. */
     findex_1.nqatt = 0;
     findex_1.corrct = 0;
-    rspeak_(768);
+    PrintMessage(768);
 /* 						!ANNOUNCE RULES. */
-    rspeak_(769);
+    PrintMessage(769);
     i__1 = findex_1.quesno + 770;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!ASK QUESTION. */
     return ret_val;
 
 L14200:
-    rspeak_(798);
+    PrintMessage(798);
 /* 						!NO REPLY. */
     return ret_val;
 
@@ -680,7 +680,7 @@ L15000:
 	goto L10;
     }
 /* 						!OPEN? */
-    rspeak_(778);
+    PrintMessage(778);
 /* 						!CANT. */
     return ret_val;
 
@@ -699,10 +699,10 @@ L17000:
 	goto L10;
     }
 /* 						!PUSH? */
-    rspeak_(809);
+    PrintMessage(809);
 /* 						!CLICK. */
     if ((objcts_1.oflag2[oindex_1.cdoor - 1] & OPENBT) != 0) {
-	rspeak_(810);
+	PrintMessage(810);
     }
 /* 						!CLOSE CELL DOOR. */
 
@@ -771,7 +771,7 @@ L18100:
 	goto L18200;
     }
 /* 						!TURN DIAL TO X? */
-    rspeak_(806);
+    PrintMessage(806);
 /* 						!MUST SPECIFY. */
     return ret_val;
 
@@ -779,7 +779,7 @@ L18200:
     if (prsvec_1.prsi >= oindex_1.num1 && prsvec_1.prsi <= oindex_1.num8) {
 	goto L18300;
     }
-    rspeak_(807);
+    PrintMessage(807);
 /* 						!MUST BE DIGIT. */
     return ret_val;
 
@@ -807,7 +807,7 @@ L20000:
 
 	goto L10;
     }
-    rspeak_(843);
+    PrintMessage(843);
 /* 						!PANEL IN DOOR, NOGO. */
     return ret_val;
 
@@ -838,7 +838,7 @@ L21100:
 	goto L21200;
     }
     i__1 = rnd_(5) + 552;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!JOKE FOR VILL, VICT. */
     return ret_val;
 
@@ -874,7 +874,7 @@ logical pnf;
 	goto L100;
     }
 /* 						!ANY HERE? */
-    rspeak_(st);
+    PrintMessage(st);
 /* 						!NO, LOSE. */
     return ret_val;
 
@@ -888,7 +888,7 @@ L100:
 	goto L200;
     }
     i__1 = st + 1;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!CANT OPEN OR MOVE. */
     return ret_val;
 
@@ -898,7 +898,7 @@ L200:
 	goto L300;
     }
     i__1 = mrbf + 844;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!LOOK IN MIRROR. */
     return ret_val;
 
@@ -908,7 +908,7 @@ L300:
     }
 /* 						!BREAK? */
     i__1 = st + 2 + mrbf;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!DO IT. */
     if (num == 1 && ! (pnf)) {
 	findex_1.mr1f = FALSE_;
@@ -923,7 +923,7 @@ L400:
 	goto L500;
     }
 /* 						!BROKEN MIRROR? */
-    rspeak_(846);
+    PrintMessage(846);
     return ret_val;
 
 L500:
@@ -932,7 +932,7 @@ L500:
     }
 /* 						!PUSH? */
     i__1 = st + 3 + num;
-    rspeak_(i__1);
+    PrintMessage(i__1);
     return ret_val;
 
 L600:

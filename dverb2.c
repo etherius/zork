@@ -91,11 +91,11 @@ void savegm_()
     if (fclose(e) == EOF)
 	goto L100;
 
-    rspeak_(597);
+    PrintMessage(597);
     return;
 
 L100:
-    rspeak_(598);
+    PrintMessage(598);
 /* 						!CANT DO IT. */
 } /* savegm_ */
 
@@ -180,16 +180,16 @@ void rstrgm_()
 
     (void)fclose(e);
 
-    rspeak_(599);
+    PrintMessage(599);
     return;
 
 L100:
-    rspeak_(598);
+    PrintMessage(598);
 /* 						!CANT DO IT. */
     return;
 
 L200:
-    rspeak_(600);
+    PrintMessage(600);
 /* 						!OBSOLETE VERSION */
     (void)fclose(e);
 } /* rstrgm_ */
@@ -284,7 +284,7 @@ L525:
     if ((rooms_1.rflag[play_1.here - 1] & RNWALL) != 0) {
 	curxt_1.xstrng = 524;
     }
-    rspeak_(curxt_1.xstrng);
+    PrintMessage(curxt_1.xstrng);
     prsvec_1.prscon = 1;
 /* 						!STOP CMD STREAM. */
     return ret_val;
@@ -313,7 +313,7 @@ L600:
 	goto L525;
     }
 /* 						!IF NO REASON, USE STD. */
-    rspeak_(curxt_1.xstrng);
+    PrintMessage(curxt_1.xstrng);
 /* 						!DENY EXIT. */
     prsvec_1.prscon = 1;
 /* 						!STOP CMD STREAM. */
@@ -402,7 +402,7 @@ L2000:
     }
 /* 						!IF FLIPPED, NOTHING. */
 L2500:
-    rspeak_(121);
+    PrintMessage(121);
 /* 						!SPIN THE COMPASS. */
 L5000:
     i = xpars_1.xelnt[xpars_1.xcond - 1] * rnd_(8);
@@ -582,7 +582,7 @@ L10200:
 	curxt_1.xroom1 = findex_1.mloc - 1;
     }
 /* 						!IF S. */
-    rspeak_(818);
+    PrintMessage(818);
 /* 						!CLOSE DOOR. */
     findex_1.wdopnf = FALSE_;
     ret_val = curxt_1.xroom1;
@@ -634,7 +634,7 @@ L14000:
 	return ret_val;
     }
 /* 						!LADDER HERE? */
-    rspeak_(882);
+    PrintMessage(882);
 /* 						!YOU WIN. */
     findex_1.frobzf = TRUE_;
 /* 						!LET HIM OUT. */

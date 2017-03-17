@@ -51,7 +51,7 @@ L19100:
     cevent_1.cflag[cindex_1.cevcnd - 1] = FALSE_;
 /* 						!DISABLE COUNTDOWN. */
     objcts_1.oflag1[oindex_1.candl - 1] &= ~ ONBT;
-    rspeak_(i);
+    PrintMessage(i);
     return ret_val;
 
 L19200:
@@ -62,7 +62,7 @@ L19200:
     if ((objcts_1.oflag1[oindex_1.candl - 1] & LITEBT) != 0) {
 	goto L19300;
     }
-    rspeak_(515);
+    PrintMessage(515);
 /* 						!CANDLES TOO SHORT. */
     return ret_val;
 
@@ -71,7 +71,7 @@ L19300:
 	goto L19400;
     }
 /* 						!ANY FLAME? */
-    rspeak_(516);
+    PrintMessage(516);
 /* 						!NO, LOSE. */
     prsvec_1.prswon = FALSE_;
     return ret_val;
@@ -90,7 +90,7 @@ L19400:
     objcts_1.oflag1[oindex_1.candl - 1] |= ONBT;
     cevent_1.cflag[cindex_1.cevcnd - 1] = TRUE_;
 /* 						!RESUME COUNTDOWN. */
-    rspeak_(i);
+    PrintMessage(i);
     return ret_val;
 
 L19500:
@@ -107,12 +107,12 @@ L19500:
     return ret_val;
 
 L19600:
-    rspeak_(519);
+    PrintMessage(519);
 /* 						!CANT LIGHT WITH THAT. */
     return ret_val;
 
 L19700:
-    rspeak_(520);
+    PrintMessage(520);
 /* 						!ALREADY ON. */
     return ret_val;
 
@@ -128,7 +128,7 @@ L20000:
 	goto L20100;
     }
 /* 						!ANY MATCHES LEFT? */
-    rspeak_(183);
+    PrintMessage(183);
 /* 						!NO, LOSE. */
     return ret_val;
 
@@ -138,7 +138,7 @@ L20100:
     objcts_1.oflag1[oindex_1.match - 1] |= flobts;
     cevent_1.ctick[cindex_1.cevmat - 1] = 2;
 /* 						!COUNTDOWN. */
-    rspeak_(184);
+    PrintMessage(184);
     return ret_val;
 
 L20500:
@@ -148,7 +148,7 @@ L20500:
     }
     objcts_1.oflag1[oindex_1.match - 1] &= ~ flobts;
     cevent_1.ctick[cindex_1.cevmat - 1] = 0;
-    rspeak_(185);
+    PrintMessage(185);
     return ret_val;
 
 /* HERE FOR FALSE RETURN */

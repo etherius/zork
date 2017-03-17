@@ -226,7 +226,7 @@ L200:
     }
 
     if (vbflag) {
-	rspeak_(601);
+	PrintMessage(601);
     }
 /* 						!GREEK TO ME, FAIL. */
     return ret_val;

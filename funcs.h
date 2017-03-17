@@ -76,7 +76,7 @@ extern void
 	princo_ P((int, int)),
 	princr_ P((logical, int)),
 	rdline_ P((char *, int)),
-	rspeak_ P((int)),
+	PrintMessage P((int)),
 	rspsb2_ P((int, int, int)),
 	rspsub_ P((int, int)),
 	rstrgm_ P((void)),

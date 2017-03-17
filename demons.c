@@ -232,7 +232,7 @@ int out;
     if ((advs_1.aflag[h - 1] & aflags_1.astag) == 0) {
 	goto L100;
     }
-    rspeak_(591);
+    PrintMessage(591);
 /* 						!YES, CANT FIGHT. */
     advs_1.aflag[h - 1] &= ~ aflags_1.astag;
     return ret_val;
@@ -566,7 +566,7 @@ L300:
     }
 /* 						!ANY STATE CHANGE? */
     i__2 = ng + 495;
-    rspeak_(i__2);
+    PrintMessage(i__2);
 /* 						!YES, TELL NEW STATE. */
     hack_1.swdsta = ng;
     return;

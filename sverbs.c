@@ -117,7 +117,7 @@ L100:
 	i = i % 1000 + rnd_(j);
     }
 /* 						!IF RANDOM, CHOOSE. */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!PRINT JOKE. */
     return ret_val;
 /* SVERBS, PAGE 2A */
@@ -135,7 +135,7 @@ L66000:
     ret_val = rmdesc_(1);
 /* 						!DESCRIBE OBJ ONLY. */
     if (! play_1.telflg) {
-	rspeak_(138);
+	PrintMessage(138);
     }
 /* 						!NO OBJECTS. */
     return ret_val;
@@ -144,7 +144,7 @@ L66000:
 
 L67000:
     i__1 = rooms_1.rdesc2[play_1.here - 1];
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!SHORT ROOM NAME. */
     return ret_val;
 
@@ -165,7 +165,7 @@ L1000:
     findex_1.brieff = TRUE_;
 /* 						!BRIEF DESCRIPTIONS. */
     findex_1.superf = FALSE_;
-    rspeak_(326);
+    PrintMessage(326);
     return ret_val;
 
 /* V71--	VERBOSE.  CLEAR FLAGS. */
@@ -174,14 +174,14 @@ L2000:
     findex_1.brieff = FALSE_;
 /* 						!LONG DESCRIPTIONS. */
     findex_1.superf = FALSE_;
-    rspeak_(327);
+    PrintMessage(327);
     return ret_val;
 
 /* V72--	SUPERBRIEF.  SET FLAG. */
 
 L3000:
     findex_1.superf = TRUE_;
-    rspeak_(328);
+    PrintMessage(328);
     return ret_val;
 
 /* V73-- STAY (USED IN ENDGAME). */
@@ -191,7 +191,7 @@ L4000:
 	goto L4100;
     }
 /* 						!TELL MASTER, STAY. */
-    rspeak_(781);
+    PrintMessage(781);
 /* 						!HE DOES. */
     cevent_1.ctick[cindex_1.cevfol - 1] = 0;
 /* 						!NOT FOLLOWING. */
@@ -199,7 +199,7 @@ L4000:
 
 L4100:
     if (play_1.winner == aindex_1.player) {
-	rspeak_(664);
+	PrintMessage(664);
     }
 /* 						!JOKE. */
     return ret_val;
@@ -220,7 +220,7 @@ L6000:
 	    0) {
 	i = rnd_(3) + 331;
     }
-    rspeak_(i);
+    PrintMessage(i);
     return ret_val;
 
 /* V76--	GERONIMO.  IF IN BARREL, FATAL, ELSE JOKE. */
@@ -230,7 +230,7 @@ L7000:
 	goto L7100;
     }
 /* 						!IN BARREL? */
-    rspeak_(334);
+    PrintMessage(334);
 /* 						!NO, JOKE. */
     return ret_val;
 
@@ -246,7 +246,7 @@ L8000:
 	    ) {
 	goto L8100;
     }
-    rspeak_(336);
+    PrintMessage(336);
 /* 						!NOT HERE, JOKE. */
     return ret_val;
 
@@ -268,11 +268,11 @@ L9000:
 /* 						!IN RIDDLE ROOM? */
     findex_1.riddlf = TRUE_;
 /* 						!YES, SOLVED IT. */
-    rspeak_(338);
+    PrintMessage(338);
     return ret_val;
 
 L9100:
-    rspeak_(339);
+    PrintMessage(339);
 /* 						!WELL, WHAT? */
     return ret_val;
 
@@ -289,7 +289,7 @@ L10000:
     }
 /* 						!FORE1 STILL THERE? */
 L10050:
-    rspeak_(340);
+    PrintMessage(340);
 /* 						!JOKE. */
     return ret_val;
 
@@ -311,7 +311,7 @@ L11000:
     }
 /* 						!TREASURE ROOM THERE? */
 L11050:
-    rspeak_(341);
+    PrintMessage(341);
 /* 						!NOTHING HAPPENS. */
     return ret_val;
 
@@ -328,7 +328,7 @@ L12000:
     }
 /* 						!TEMP1 STILL THERE? */
 L12050:
-    rspeak_(341);
+    PrintMessage(341);
 /* 						!NOTHING HAPPENS. */
     return ret_val;
 
@@ -341,7 +341,7 @@ L13000:
 	i = 252;
     }
 /* 						!JOKE FOR SAFE. */
-    rspeak_(i);
+    PrintMessage(i);
     return ret_val;
 
 /* V83--	SCORE.  PRINT SCORE. */
@@ -370,7 +370,7 @@ L16000:
 	return ret_val;
     }
 /* 						!TELL MASTER, FOLLOW. */
-    rspeak_(782);
+    PrintMessage(782);
     cevent_1.ctick[cindex_1.cevfol - 1] = -1;
 /* 						!STARTS FOLLOWING. */
     return ret_val;
@@ -389,7 +389,7 @@ L17000:
 /* 						!FAKE OUT FROMDR. */
     cevent_1.ctick[cindex_1.cevscl - 1] = 6;
 /* 						!START ALARM. */
-    rspeak_(668);
+    PrintMessage(668);
 /* 						!DISORIENT HIM. */
     f = moveto_(screen_1.scolrm, play_1.winner);
 /* 						!INTO ROOM. */
@@ -431,7 +431,7 @@ L17400:
 	i = rnd_(5) + 552;
     }
 /* 						!SPECIAL JOKES IF CARRY. */
-    rspeak_(i);
+    PrintMessage(i);
     return ret_val;
 
 L17500:
@@ -447,7 +447,7 @@ L17500:
 /* 						!DECLARE NEW SCOLRM. */
     cevent_1.ctick[cindex_1.cevscl - 1] = 0;
 /* 						!CANCEL ALARM. */
-    rspeak_(668);
+    PrintMessage(668);
 /* 						!DISORIENT HIM. */
     f = moveto_(rindex_1.bkbox, play_1.winner);
 /* 						!BACK IN BOX ROOM. */
@@ -463,7 +463,7 @@ L18000:
 	i = 360;
     }
 /* 						!DING, DONG. */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!JOKE. */
     return ret_val;
 
@@ -474,7 +474,7 @@ L19000:
 	goto L19100;
     }
 /* 						!BRUSH TEETH? */
-    rspeak_(362);
+    PrintMessage(362);
 /* 						!NO, JOKE. */
     return ret_val;
 
@@ -483,7 +483,7 @@ L19100:
 	goto L19200;
     }
 /* 						!WITH SOMETHING? */
-    rspeak_(363);
+    PrintMessage(363);
 /* 						!NO, JOKE. */
     return ret_val;
 
@@ -556,7 +556,7 @@ L22000:
 	goto L22100;
     }
 /* 						!HERE? */
-    rspeak_(447);
+    PrintMessage(447);
 /* 						!NO, JOKE. */
     return ret_val;
 
@@ -579,7 +579,7 @@ L22200:
     }
 L22300:
     i__1 = rnd_(5) + 314;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!WHEEEE */
 /* 						! */
     return ret_val;
@@ -598,14 +598,14 @@ L23000:
 	goto L23200;
     }
 L23100:
-    rspeak_(464);
+    PrintMessage(464);
 /* 						!NOT LOCK GRATE. */
     return ret_val;
 
 L23200:
     findex_1.grunlf = FALSE_;
 /* 						!GRATE NOW LOCKED. */
-    rspeak_(214);
+    PrintMessage(214);
     exits_1.travel[rooms_1.rexit[play_1.here - 1]] = 214;
 /* 						!CHANGE EXIT STATUS. */
     return ret_val;
@@ -627,7 +627,7 @@ L24000:
 L24200:
     findex_1.grunlf = TRUE_;
 /* 						!UNLOCK GRATE. */
-    rspeak_(217);
+    PrintMessage(217);
     exits_1.travel[rooms_1.rexit[play_1.here - 1]] = 217;
 /* 						!CHANGE EXIT STATUS. */
     return ret_val;
@@ -652,7 +652,7 @@ L25000:
     l = min(i__1,i__2);
 /* 						!SCALE. */
     i__1 = l + 473;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!DESCRIBE HEALTH. */
     i = (-j - 1) * 30 + cevent_1.ctick[cindex_1.cevcur - 1];
 /* 						!COMPUTE WAIT. */
@@ -662,11 +662,11 @@ L25000:
     }
 
     i__1 = k + 478;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!HOW MUCH MORE? */
     if (state_1.deaths != 0) {
 	i__1 = state_1.deaths + 482;
-	rspeak_(i__1);
+	PrintMessage(i__1);
     }
 /* 						!HOW MANY DEATHS? */
     return ret_val;
@@ -723,7 +723,7 @@ L26300:
 	goto L26400;
     }
 /* 						!ANY INPUT? */
-    rspeak_(856);
+    PrintMessage(856);
 /* 						!NO, HO HUM. */
     return ret_val;
 
@@ -750,12 +750,12 @@ L26400:
     return ret_val;
 
 L26550:
-    rspeak_(857);
+    PrintMessage(857);
 /* 						!HE'S GOT ONE ALREADY. */
     return ret_val;
 
 L26575:
-    rspeak_(858);
+    PrintMessage(858);
 /* 						!HE'S NOT IN ENDGAME. */
     return ret_val;
 
@@ -772,13 +772,13 @@ L26600:
     }
     findex_1.spellf = TRUE_;
 /* 						!IT WORKS. */
-    rspeak_(859);
+    PrintMessage(859);
     cevent_1.ctick[cindex_1.cevste - 1] = 1;
 /* 						!FORCE START. */
     return ret_val;
 
 L26800:
-    rspeak_(855);
+    PrintMessage(855);
 /* 						!TOO LATE. */
     return ret_val;
 /* SVERBS, PAGE 8 */
@@ -790,7 +790,7 @@ L27000:
 	    findex_1.inqstf) {
 	goto L27100;
     }
-    rspeak_(799);
+    PrintMessage(799);
 /* 						!NO ONE LISTENS. */
     prsvec_1.prscon = 1;
     return ret_val;
@@ -825,12 +825,12 @@ L27300:
     }
 /* 						!TOO MANY WRONG? */
     i__1 = findex_1.nqatt + 800;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!NO, TRY AGAIN. */
     return ret_val;
 
 L27400:
-    rspeak_(826);
+    PrintMessage(826);
 /* 						!ALL OVER. */
     cevent_1.cflag[cindex_1.cevinq - 1] = FALSE_;
 /* 						!LOSE. */
@@ -841,7 +841,7 @@ L27500:
 /* 						!KILL REST OF LINE. */
     ++findex_1.corrct;
 /* 						!GOT IT RIGHT. */
-    rspeak_(800);
+    PrintMessage(800);
 /* 						!HOORAY. */
     if (findex_1.corrct >= 3) {
 	goto L27600;
@@ -851,14 +851,14 @@ L27500:
 /* 						!NO, START AGAIN. */
     findex_1.quesno = (findex_1.quesno + 3) % 8;
     findex_1.nqatt = 0;
-    rspeak_(769);
+    PrintMessage(769);
 /* 						!ASK NEXT QUESTION. */
     i__1 = findex_1.quesno + 770;
-    rspeak_(i__1);
+    PrintMessage(i__1);
     return ret_val;
 
 L27600:
-    rspeak_(827);
+    PrintMessage(827);
 /* 						!QUIZ OVER, */
     cevent_1.cflag[cindex_1.cevinq - 1] = FALSE_;
     objcts_1.oflag2[oindex_1.qdoor - 1] |= OPENBT;

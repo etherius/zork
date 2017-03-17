@@ -12,9 +12,13 @@
 #define SEEK_SET (0)
 #endif
 
+#ifndef NO_MESSAGE
+#define NO_MESSAGE (0)
+#endif
+
 extern FILE *dbfile;
 
-static void rspsb2nl_ P((int, int, int, logical));
+static void PrintGenericMessage P((int, int, int, logical));
 
 /* RSPEAK-- OUTPUT RANDOM MESSAGE ROUTINE */
 
@@ -22,11 +26,10 @@ static void rspsb2nl_ P((int, int, int, logical));
 
 /* 	CALL RSPEAK(MSGNUM) */
 
-void rspeak_(n)
-int n;
+void PrintMessage(int mesgNum)
 {
-    rspsb2nl_(n, 0, 0, 1);
-} /* rspeak_ */
+    PrintGenericMessage(mesgNum, NO_MESSAGE, NO_MESSAGE, 1);
+} /* PrintMessage */
 
 /* RSPSUB-- OUTPUT RANDOM MESSAGE WITH SUBSTITUTABLE ARGUMENT */
 
@@ -38,7 +41,7 @@ void rspsub_(n, s1)
 int n;
 int s1;
 {
-    rspsb2nl_(n, s1, 0, 1);
+    PrintGenericMessage(n, s1, NO_MESSAGE, 1);
 } /* rspsub_ */
 
 /* RSPSB2-- OUTPUT RANDOM MESSAGE WITH UP TO TWO SUBSTITUTABLE ARGUMENTS */
@@ -52,15 +55,36 @@ int n;
 int s1;
 int s2;
 {
-    rspsb2nl_(n, s1, s2, 1);
+    PrintGenericMessage(n, s1, s2, 1);
 } /* rspsb2_ */
 
 /* rspsb2nl_ Display a substitutable message with an optional newline */
 
-static void rspsb2nl_(int msgNum, int y, int z, logical printNewLine)
+void VerifyCharacterIsValid(int ch , int positionOfCharacter) {
+    if (ch == EOF) {
+        fprintf(stderr, "Error reading database loc %d\n", positionOfCharacter);
+        ExitGame();
+    }
+}
+
+void VerifyMessagePositionFromStartingLocationIsValid(FILE* dbfile , int mesgPosition , int mesgStartLocation){
+    if (fseek(dbfile, mesgPosition + (long)mesgStartLocation, SEEK_SET) == EOF) {
+       fprintf(stderr, "Error seeking database loc %d\n", mesgPosition);
+       ExitGame();
+    }
+}
+
+void VerifyMessagePositionIsValid(FILE* dbfile , int mesgPosition){
+    if (fseek(dbfile, mesgPosition , SEEK_SET) == EOF) {
+       fprintf(stderr, "Error seeking database loc %d\n", mesgPosition);
+       ExitGame();
+    }
+}
+
+static void PrintGenericMessage(int firstMsgNum, int secondMsgNum, int thirdMsgNum, logical printNewLine)
 {
     const char *passPhrase = "IanLanceTaylorJr";
-    long msgPosition = (long)msgNum;
+    long msgPosition = (long)firstMsgNum;
 
     if (msgPosition > 0) {
 	   msgPosition = rmsg_1.rtext[msgPosition - 1];
@@ -73,39 +97,27 @@ static void rspsb2nl_(int msgNum, int y, int z, logical printNewLine)
     play_1.telflg = TRUE_;
 
     msgPosition = ((- msgPosition) - 1) * 8;
-    if (fseek(dbfile, msgPosition + (long)rmsg_1.mrloc, SEEK_SET) == EOF) {
-	   fprintf(stderr, "Error seeking database loc %d\n", msgPosition);
-	   ExitGame();
-    }
+    VerifyMessagePositionFromStartingLocationIsValid(dbfile , msgPosition , rmsg_1.mrloc);
 
     while (1) {
-    	int i;
-
-    	i = getc(dbfile);
-    	if (i == EOF) {
-    	    fprintf(stderr, "Error reading database loc %d\n", msgPosition);
-    	    ExitGame();
-    	}
-    	i ^= passPhrase[msgPosition & 0xf] ^ (msgPosition & 0xff);
+    	int ch = getc(dbfile);
+        VerifyCharacterIsValid(ch , msgPosition);
+    	ch ^= passPhrase[msgPosition & 0xf] ^ (msgPosition & 0xff);
     	msgPosition = msgPosition + 1;
-    	if (i == '\0')
+    	if (ch == '\0')
     	    break;
-    	else if (i == '\n') {
+    	else if (ch == '\n') {
     	    putchar('\n');
     	}
-
-    	else if (i == '#' && y != 0) {
+    	else if (ch == '#' && secondMsgNum != NO_MESSAGE) {
     	    long iloc = ftell(dbfile);
-    	    rspsb2nl_(y, 0, 0, 0);
-    	    if (fseek(dbfile, iloc, SEEK_SET) == EOF) {
-        		fprintf(stderr, "Error seeking database loc %d\n", iloc);
-        		ExitGame();
-    	    }
-    	    y = z;
-    	    z = 0;
+    	    PrintGenericMessage(secondMsgNum, NO_MESSAGE, NO_MESSAGE, FALSE_);
+            VerifyMessagePositionIsValid(dbfile , iloc);    	    
+            secondMsgNum = thirdMsgNum;
+    	    thirdMsgNum = NO_MESSAGE;
     	}
     	else
-    	    putchar(i);
+    	    putchar(ch);
     }
 
     if (printNewLine)
@@ -182,7 +194,7 @@ int rm;
 int cn;
 int ad;
 {
-    rspeak_(r);
+    PrintMessage(r);
     objcts_1.oroom[o - 1] = rm;
     objcts_1.ocan[o - 1] = cn;
     objcts_1.oadv[o - 1] = ad;
@@ -269,7 +281,7 @@ int desc;
     logical f;
     int i, j;
 
-    rspeak_(desc);
+    PrintMessage(desc);
 /* 						!DESCRIBE SAD STATE. */
     prsvec_1.prscon = 1;
 /* 						!STOP PARSER. */
@@ -403,12 +415,12 @@ L500:
 /* CAN'T OR WON'T CONTINUE, CLEAN UP AND EXIT. */
 
 L900:
-    rspeak_(625);
+    PrintMessage(625);
 /* 						!IN ENDGAME, LOSE. */
     goto L1100;
 
 L1000:
-    rspeak_(7);
+    PrintMessage(7);
 /* 						!INVOLUNTARY EXIT. */
 L1100:
     score_(0);
@@ -503,7 +515,7 @@ L50:
 	goto L100;
     }
 /* 						!PLAYER JUST MOVE? */
-    rspeak_(2);
+    PrintMessage(2);
 /* 						!NO, JUST SAY DONE. */
     prsvec_1.prsa = vindex_1.walkiw;
 /* 						!SET UP WALK IN ACTION. */
@@ -514,7 +526,7 @@ L100:
 	goto L300;
     }
 /* 						!LIT? */
-    rspeak_(430);
+    PrintMessage(430);
 /* 						!WARN OF GRUE. */
     ret_val = FALSE_;
     return ret_val;
@@ -556,7 +568,7 @@ L300:
     goto L500;
 
 L400:
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!OUTPUT DESCRIPTION. */
 L500:
     if (advs_1.avehic[play_1.winner - 1] != 0) {

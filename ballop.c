@@ -27,7 +27,7 @@ int arg;
 	goto L50;
     }
 /* 						!INFLATED? */
-    rspeak_(543);
+    PrintMessage(543);
 /* 						!NO. */
     goto L100;
 L50:
@@ -35,7 +35,7 @@ L50:
 /* 						!YES. */
 L100:
     if (findex_1.btief != 0) {
-	rspeak_(545);
+	PrintMessage(545);
     }
 /* 						!HOOKED? */
     return ret_val;
@@ -53,7 +53,7 @@ L200:
 	goto L250;
     }
 /* 						!VALID EXIT? */
-    rspeak_(546);
+    PrintMessage(546);
 /* 						!NO, JOKE. */
     return ret_val;
 
@@ -62,7 +62,7 @@ L250:
 	goto L275;
     }
 /* 						!TIED UP? */
-    rspeak_(547);
+    PrintMessage(547);
 /* 						!YES, JOKE. */
     return ret_val;
 
@@ -91,7 +91,7 @@ L350:
 	    qempty_(oindex_1.recep)) {
 	goto L10;
     }
-    rspeak_(549);
+    PrintMessage(549);
     return ret_val;
 
 L500:
@@ -125,7 +125,7 @@ L600:
     findex_1.blabf = TRUE_;
     findex_1.binff = prsvec_1.prso;
     cevent_1.ctick[cindex_1.cevbal - 1] = 3;
-    rspeak_(551);
+    PrintMessage(551);
     return ret_val;
 
 L700:

@@ -142,7 +142,7 @@ L18000:
 	goto L18100;
     }
 /* 						!ROOM LIT? */
-    rspeak_(356);
+    PrintMessage(356);
 /* 						!NO, CANT READ. */
     return ret_val;
 
@@ -168,7 +168,7 @@ L18200:
 
 L18300:
     if (! objact_()) {
-	rspeak_(objcts_1.oread[prsvec_1.prso - 1]);
+	PrintMessage(objcts_1.oread[prsvec_1.prso - 1]);
     }
     return ret_val;
 
@@ -184,7 +184,7 @@ L20000:
 
 L22000:
     if (! objact_()) {
-	rspeak_(368);
+	PrintMessage(368);
     }
 /* 						!OBJ HANDLE? */
     return ret_val;
@@ -193,7 +193,7 @@ L22000:
 
 L23000:
     if (! objact_()) {
-	rspeak_(369);
+	PrintMessage(369);
     }
 /* 						!OBJ HANDLE? */
     return ret_val;
@@ -225,7 +225,7 @@ L25000:
 
 L26000:
     if (! objact_()) {
-	rspeak_(371);
+	PrintMessage(371);
     }
     return ret_val;
 
@@ -283,7 +283,7 @@ L33000:
     if ((objcts_1.oflag2[prsvec_1.prso - 1] & TIEBT) == 0) {
 	i = 384;
     }
-    rspeak_(i);
+    PrintMessage(i);
     return ret_val;
 
 /* V114--	TIE.  NEVER REALLY WORKS. */
@@ -292,7 +292,7 @@ L34000:
     if ((objcts_1.oflag2[prsvec_1.prso - 1] & TIEBT) != 0) {
 	goto L34100;
     }
-    rspeak_(385);
+    PrintMessage(385);
 /* 						!NOT TIEABLE. */
     return ret_val;
 
@@ -329,7 +329,7 @@ L36000:
     if ((objcts_1.oflag1[prsvec_1.prso - 1] & TURNBT) != 0) {
 	goto L36100;
     }
-    rspeak_(390);
+    PrintMessage(390);
 /* 						!NOT TURNABLE. */
     return ret_val;
 
@@ -400,7 +400,7 @@ L41500:
     i = objcts_1.oread[prsvec_1.prso - 1];
 /* 						!GET READING MATERIAL. */
     if (i != 0) {
-	rspeak_(i);
+	PrintMessage(i);
     }
 /* 						!OUTPUT IF THERE, */
     if (i == 0) {
@@ -421,7 +421,7 @@ L42000:
     if ((objcts_1.oflag2[prsvec_1.prso - 1] & VILLBT) == 0) {
 	goto L42100;
     }
-    rspeak_(371);
+    PrintMessage(371);
 /* 						!JOKE FOR VILLAINS. */
     return ret_val;
 
@@ -499,7 +499,7 @@ L44000:
 	    objcts_1.oadv[prsvec_1.prso - 1] == play_1.winner) {
 	goto L44100;
     }
-    rspeak_(400);
+    PrintMessage(400);
 /* 						!CANT DO IT. */
     return ret_val;
 
@@ -507,7 +507,7 @@ L44100:
     if ((objcts_1.oflag1[prsvec_1.prso - 1] & ONBT) == 0) {
 	goto L44200;
     }
-    rspeak_(401);
+    PrintMessage(401);
 /* 						!ALREADY ON. */
     return ret_val;
 
@@ -532,7 +532,7 @@ L45000:
 	    objcts_1.oadv[prsvec_1.prso - 1] == play_1.winner) {
 	goto L45100;
     }
-    rspeak_(402);
+    PrintMessage(402);
 /* 						!CANT DO IT. */
     return ret_val;
 
@@ -540,7 +540,7 @@ L45100:
     if ((objcts_1.oflag1[prsvec_1.prso - 1] & ONBT) != 0) {
 	goto L45200;
     }
-    rspeak_(403);
+    PrintMessage(403);
 /* 						!ALREADY OFF. */
     return ret_val;
 
@@ -549,7 +549,7 @@ L45200:
     rspsub_(405, odo2);
 L45300:
     if (! lit_(play_1.here)) {
-	rspeak_(406);
+	PrintMessage(406);
     }
 /* 						!MAY BE DARK. */
     return ret_val;
@@ -581,7 +581,7 @@ L46200:
     if (! ((objcts_1.oflag2[prsvec_1.prso - 1] & OPENBT) != 0)) {
 	goto L46225;
     }
-    rspeak_(412);
+    PrintMessage(412);
 /* 						!ALREADY OPEN. */
     return ret_val;
 
@@ -596,7 +596,7 @@ L46225:
     return ret_val;
 
 L46300:
-    rspeak_(409);
+    PrintMessage(409);
 /* 						!DONE */
     return ret_val;
 
@@ -622,13 +622,13 @@ L47100:
 	goto L47200;
     }
 /* 						!OPEN? */
-    rspeak_(413);
+    PrintMessage(413);
 /* 						!NO, JOKE. */
     return ret_val;
 
 L47200:
     objcts_1.oflag2[prsvec_1.prso - 1] &= ~ OPENBT;
-    rspeak_(414);
+    PrintMessage(414);
 /* 						!DONE. */
     return ret_val;
 /* VAPPLI, PAGE 7 */
@@ -686,7 +686,7 @@ L48300:
 /* V128--	WAIT.  RUN CLOCK DEMON. */
 
 L49000:
-    rspeak_(419);
+    PrintMessage(419);
 /* 						!TIME PASSES. */
     for (i = 1; i <= 3; ++i) {
 	if (clockd_()) {
@@ -702,7 +702,7 @@ L49000:
 L50000:
 L88000:
     if (! objact_()) {
-	rspeak_(663);
+	PrintMessage(663);
     }
 /* 						!IF NOT OBJ, JOKE. */
     return ret_val;
@@ -755,7 +755,7 @@ L52000:
 	goto L52100;
     }
 /* 						!FROM VEHICLE? */
-    rspeak_(424);
+    PrintMessage(424);
 /* 						!NO, JOKE. */
     return ret_val;
 
@@ -767,13 +767,13 @@ L52100:
     if ((rooms_1.rflag[play_1.here - 1] & RLAND) != 0) {
 	goto L52200;
     }
-    rspeak_(425);
+    PrintMessage(425);
 /* 						!NOT ON LAND. */
     return ret_val;
 
 L52200:
     advs_1.avehic[play_1.winner - 1] = 0;
-    rspeak_(426);
+    PrintMessage(426);
     if (play_1.winner != aindex_1.player) {
 	newsta_(advs_1.aobj[play_1.winner - 1], 0, play_1.here, 0, 0);
     }
@@ -803,7 +803,7 @@ L56000:
 	    0) {
 	goto L56025;
     }
-    rspeak_(516);
+    PrintMessage(516);
 /* 						!NOTHING TO FILL WITH. */
     prsvec_1.prswon = FALSE_;
 /* 						!YOU LOSE. */
@@ -857,7 +857,7 @@ L59200:
     return ret_val;
 
 L59300:
-    rspeak_(456);
+    PrintMessage(456);
 /* 						!YES, JOKE. */
     return ret_val;
 
@@ -879,7 +879,7 @@ L59400:
 	goto L59500;
     }
 /* 						!CONT OPEN? */
-    rspeak_(457);
+    PrintMessage(457);
 /* 						!NO, JOKE. */
     return ret_val;
 
@@ -943,7 +943,7 @@ L60100:
 	goto L60200;
     }
 L60150:
-    rspeak_(461);
+    PrintMessage(461);
 /* 						!CANT REACH IT. */
     return ret_val;
 
@@ -1009,7 +1009,7 @@ L66100:
 	goto L66200;
     }
 /* 						!ANYTHING? */
-    rspeak_(469);
+    PrintMessage(469);
 /* 						!NO, JOKE. */
     return ret_val;
 
@@ -1063,7 +1063,7 @@ L68000:
 /* V143--	TELL.  PROCESSED IN GAME. */
 
 L69000:
-    rspeak_(603);
+    PrintMessage(603);
     return ret_val;
 
 /* V144--	PUT.  PROCESSED EXTERNALLY. */
@@ -1087,7 +1087,7 @@ L77000:
     if ((rooms_1.rflag[rindex_1.tstrs - 1] & RSEEN) == 0) {
 	goto L77100;
     }
-    rspeak_(828);
+    PrintMessage(828);
 /* 						!NO SAVES IN ENDGAME. */
     return ret_val;
 
@@ -1101,7 +1101,7 @@ L78000:
     if ((rooms_1.rflag[rindex_1.tstrs - 1] & RSEEN) == 0) {
 	goto L78100;
     }
-    rspeak_(829);
+    PrintMessage(829);
 /* 						!NO RESTORES IN ENDGAME. */
     return ret_val;
 
@@ -1118,7 +1118,7 @@ L80000:
     }
 /* 						!ANY OBJ? */
     i__1 = rnd_(4) + 346;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!NO, VANILLA HELLO. */
     return ret_val;
 
@@ -1127,7 +1127,7 @@ L80100:
 	goto L80200;
     }
 /* 						!HELLO AVIATOR? */
-    rspeak_(350);
+    PrintMessage(350);
 /* 						!NOTHING HAPPENS. */
     return ret_val;
 
@@ -1147,7 +1147,7 @@ L80200:
     if (state_1.hs % 20 == 0) {
 	i = 353;
     }
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!SPEAK UP. */
     return ret_val;
 
@@ -1223,7 +1223,7 @@ L81500:
 
 L82000:
     if (! objact_()) {
-	rspeak_(631);
+	PrintMessage(631);
     }
 /* 						!OBJECT HANDLE? */
     return ret_val;
@@ -1236,7 +1236,7 @@ L83000:
 	    oindex_1.pump - 1] == play_1.winner) {
 	goto L83100;
     }
-    rspeak_(632);
+    PrintMessage(632);
 /* 						!NO. */
     return ret_val;
 
@@ -1288,7 +1288,7 @@ L87000:
 	    oindex_1.wnort && prsvec_1.prso <= oindex_1.wnort + 3)) {
 	i = 656;
     }
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!JOKE. */
     return ret_val;
 

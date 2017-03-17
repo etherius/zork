@@ -171,7 +171,7 @@ L500:
 /* NOT RECOGNIZABLE */
 
 	if (vbflag) {
-	    rspeak_(601);
+	    PrintMessage(601);
 	}
 	return ret_val;
 /* SPARSE, PAGE 9 */
@@ -247,7 +247,7 @@ L4000:
 
 L4500:
 	if (vbflag) {
-	    rspeak_(616);
+	    PrintMessage(616);
 	}
 	return ret_val;
 
@@ -272,7 +272,7 @@ L6000:
 	    j = 618;
 	}
 	if (vbflag) {
-	    rspeak_(j);
+	    PrintMessage(j);
 	}
 	return ret_val;
 
@@ -288,7 +288,7 @@ L6100:
 
 L6200:
 	if (vbflag) {
-	    rspeak_(619);
+	    PrintMessage(619);
 	}
 	if (pv_1.act == 0) {
 	    pv_1.act = orphs_1.oflag & orphs_1.oact;
@@ -300,7 +300,7 @@ L6200:
 
 L7000:
 	if (vbflag) {
-	    rspeak_(617);
+	    PrintMessage(617);
 	}
 	return ret_val;
 
@@ -311,7 +311,7 @@ L8000:
 	    goto L700;
 	}
 	if (vbflag) {
-	    rspeak_(601);
+	    PrintMessage(601);
 	}
 	return ret_val;
 
@@ -379,7 +379,7 @@ L9000:
 
 L10000:
     if (vbflag) {
-	rspeak_(622);
+	PrintMessage(622);
     }
 /* 						!HUH? */
     return ret_val;

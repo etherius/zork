@@ -141,7 +141,7 @@ L3500:
 /* 						!TEST RESULT. */
     i__1 = syntax_1.dobj & VPMASK;
     orphan_(- 1, pv_1.act, 0, i__1, 0);
-    rspeak_(623);
+    PrintMessage(623);
     return ret_val;
 
 /* TRY TO FILL INDIRECT OBJECT SLOT IF THAT WAS THE PROBLEM. */
@@ -160,13 +160,13 @@ L4000:
     }
     i__1 = syntax_1.dobj & VPMASK;
     orphan_(- 1, pv_1.act, pv_1.o1, i__1, 0);
-    rspeak_(624);
+    PrintMessage(624);
     return ret_val;
 
 /* TOTAL CHOMP */
 
 L10000:
-    rspeak_(601);
+    PrintMessage(601);
 /* 						!CANT DO ANYTHING. */
     return ret_val;
 /* SYNMCH, PAGE 3 */
@@ -389,7 +389,7 @@ L3000:
 	goto L3500;
     }
 /* 						!TAKE VEHICLE? */
-    rspeak_(672);
+    PrintMessage(672);
     return ret_val;
 
 L3500:
@@ -397,7 +397,7 @@ L3500:
 	     play_1.winner) + objcts_1.osize[obj - 1] <= state_1.mxload) {
 	goto L3700;
     }
-    rspeak_(558);
+    PrintMessage(558);
 /* 						!TOO BIG. */
     return ret_val;
 

@@ -690,7 +690,7 @@ L41000:
 /* DT-- DISPLAY TEXT */
 
 L42000:
-    rspeak_(j);
+    PrintMessage(j);
     goto L2000;
 
 /* AH--	ALTER HERE */

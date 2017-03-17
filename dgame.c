@@ -23,7 +23,7 @@ void StartGame()
 
 /* START UP, DESCRIBE CURRENT LOCATION. */
 
-    rspeak_(1);
+    PrintMessage(1);
 /* 						!WELCOME ABOARD. */
     f = rmdesc_(3);
 /* 						!START GAME. */
@@ -103,7 +103,7 @@ L1000:
     if (strcmp(input_1.inbuf, "ECHO") != 0)
 	goto L1300;
 
-    rspeak_(571);
+    PrintMessage(571);
 /* 						!KILL THE ECHO. */
     findex_1.echof = TRUE_;
     objcts_1.oflag2[oindex_1.bar - 1] &= ~ SCRDBT;
@@ -138,7 +138,7 @@ L2000:
     if ((objcts_1.oflag2[prsvec_1.prso - 1] & ACTRBT) != 0) {
 	goto L2100;
     }
-    rspeak_(602);
+    PrintMessage(602);
 /* 						!CANT DO IT. */
     goto L350;
 /* 						!VAPPLI SUCCEEDS. */
@@ -162,7 +162,7 @@ L2700:
 	i = 604;
     }
 /* 						!GIVE RESPONSE. */
-    rspeak_(i);
+    PrintMessage(i);
 L2600:
     play_1.winner = aindex_1.player;
 /* 						!RESTORE STATE. */
@@ -212,7 +212,7 @@ logical flag;
     logical f;
 
     if (! (flag)) {
-	rspeak_(341);
+	PrintMessage(341);
     }
 /* 						!DEFAULT REMARK. */
     if (hack_1.thfact) {

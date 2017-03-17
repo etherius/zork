@@ -65,7 +65,7 @@ L1200:
     if (prsvec_1.prsa != vindex_1.drinkw && prsvec_1.prsa != vindex_1.eatw) {
 	goto L1300;
     }
-    rspeak_(568);
+    PrintMessage(568);
 /* 						!EAT OR DRINK, JOKE. */
     return ret_val;
 
@@ -74,7 +74,7 @@ L1300:
 	goto L1400;
     }
 /* 						!READ, */
-    rspeak_(569);
+    PrintMessage(569);
 /* 						!JOKE. */
     return ret_val;
 
@@ -86,7 +86,7 @@ L1400:
 	    prsvec_1.prsa == vindex_1.leapw) {
 	goto L10;
     }
-    rspeak_(570);
+    PrintMessage(570);
 /* 						!JOKE. */
     return ret_val;
 /* AAPPLI, PAGE 3 */
@@ -97,7 +97,7 @@ L2000:
     if ((objcts_1.oflag2[oindex_1.qdoor - 1] & OPENBT) != 0) {
 	goto L2100;
     }
-    rspeak_(783);
+    PrintMessage(783);
 /* 						!NO MASTER YET. */
     return ret_val;
 
@@ -114,7 +114,7 @@ L2100:
 	    xsrch_1.xenter)) {
 	i = 785;
     }
-    rspeak_(i);
+    PrintMessage(i);
     return ret_val;
 
 L2200:
@@ -129,7 +129,7 @@ L2200:
 	    vindex_1.killw) {
 	goto L10;
     }
-    rspeak_(786);
+    PrintMessage(786);
 /* 						!MASTER CANT DO IT. */
     return ret_val;
 
@@ -287,7 +287,7 @@ L1250:
 	newsta_(oindex_1.still, 0, 0, oindex_1.thief, 0);
     }
     if (nr != 0 && ! lit_(hack_1.thfpos)) {
-	rspeak_(406);
+	PrintMessage(406);
     }
     rhere = 0;
     goto L1700;

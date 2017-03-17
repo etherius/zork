@@ -36,7 +36,7 @@ int who;
 	goto L500;
     }
 /* 						!NO, GOING TO LAND? */
-    rspeak_(427);
+    PrintMessage(427);
 /* 						!CAN'T GO WITHOUT VEHICLE. */
     return ret_val;
 
@@ -66,7 +66,7 @@ L500:
     if ((rooms_1.rflag[nr - 1] & RMUNG) == 0) {
 	goto L600;
     }
-    rspeak_(rrand[nr - 1]);
+    PrintMessage(rrand[nr - 1]);
 /* 						!YES, TELL HOW. */
     return ret_val;
 
@@ -133,7 +133,7 @@ logical flg;
     }
 L50:
     i__1 = i + 484;
-    rspeak_(i__1);
+    PrintMessage(i__1);
     return;
 
 L60:
@@ -153,7 +153,7 @@ L60:
     }
 L80:
     i__1 = i + 786;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 } /* score_ */
 
 /* SCRUPD- UPDATE WINNER'S SCORE */

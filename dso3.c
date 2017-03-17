@@ -172,7 +172,7 @@ int n;
     char ans[100];
 
 L100:
-    rspeak_(q);
+    PrintMessage(q);
 /* 						!ASK */
     (void) fflush(stdout);
     (void) fgets(ans, sizeof ans, stdin);
@@ -184,21 +184,21 @@ L100:
     if (*ans == 'N' || *ans == 'n') {
 	goto L300;
     }
-    rspeak_(6);
+    PrintMessage(6);
 /* 						!SCOLD. */
     goto L100;
 
 L200:
     ret_val = TRUE_;
 /* 						!YES, */
-    rspeak_(y);
+    PrintMessage(y);
 /* 						!OUT WITH IT. */
     return ret_val;
 
 L300:
     ret_val = FALSE_;
 /* 						!NO, */
-    rspeak_(n);
+    PrintMessage(n);
 /* 						!LIKEWISE. */
     return ret_val;
 

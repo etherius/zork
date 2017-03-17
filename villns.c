@@ -37,7 +37,7 @@ int arg;
     newsta_(oindex_1.axe, 0, 0, oindex_1.troll, 0);
 L1050:
     if (qhere_(oindex_1.troll, play_1.here)) {
-	rspeak_(i);
+	PrintMessage(i);
     }
 /* 						!IF PLAYER HERE. */
     return ret_val;
@@ -74,7 +74,7 @@ L1300:
     objcts_1.odesc1[oindex_1.troll - 1] = 436;
 /* 						!TROLL IN. */
     if (qhere_(oindex_1.troll, play_1.here)) {
-	rspeak_(437);
+	PrintMessage(437);
     }
     return ret_val;
 
@@ -103,13 +103,13 @@ L1500:
     objcts_1.oflag1[oindex_1.axe - 1] |= VISIBT;
     findex_1.trollf = FALSE_;
     objcts_1.odesc1[oindex_1.troll - 1] = 436;
-    rspeak_(437);
+    PrintMessage(437);
 
 L1550:
     if (prsvec_1.prsa != vindex_1.takew && prsvec_1.prsa != vindex_1.movew) {
 	goto L1600;
     }
-    rspeak_(438);
+    PrintMessage(438);
 /* 						!JOKE. */
     return ret_val;
 
@@ -118,7 +118,7 @@ L1600:
 	goto L1700;
     }
 /* 						!MUNG? */
-    rspeak_(439);
+    PrintMessage(439);
 /* 						!JOKE. */
     return ret_val;
 
@@ -144,7 +144,7 @@ L1700:
     return ret_val;
 
 L1900:
-    rspeak_(443);
+    PrintMessage(443);
 /* 						!KNIFE, THROWS IT BACK */
     objcts_1.oflag2[oindex_1.troll - 1] |= FITEBT;
     return ret_val;
@@ -153,7 +153,7 @@ L2000:
     if (! findex_1.trollf || prsvec_1.prsa != vindex_1.hellow) {
 	goto L10;
     }
-    rspeak_(366);
+    PrintMessage(366);
 /* 						!TROLL OUT. */
     return ret_val;
 
@@ -191,7 +191,7 @@ int arg;
     }
     findex_1.cyclof = FALSE_;
 /* 						!WAKE CYCLOPS. */
-    rspeak_(187);
+    PrintMessage(187);
 /* 						!DESCRIBE. */
     findex_1.rvcyc = abs(findex_1.rvcyc);
     objcts_1.oflag2[oindex_1.cyclo - 1] = (objcts_1.oflag2[oindex_1.cyclo - 1]
@@ -247,7 +247,7 @@ L300:
     return ret_val;
 
 L350:
-    rspeak_(191);
+    PrintMessage(191);
 /* 						!NOT THIRSTY. */
 L10:
     ret_val = FALSE_;
@@ -262,7 +262,7 @@ L400:
     }
 /* 						!GARLIC IS JOKE. */
 L450:
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DISDAIN IT. */
     if (findex_1.rvcyc < 0) {
 	--findex_1.rvcyc;
@@ -272,7 +272,7 @@ L450:
     }
     if (! findex_1.cyclof) {
 	i__1 = abs(findex_1.rvcyc) + 193;
-	rspeak_(i__1);
+	PrintMessage(i__1);
     }
     return ret_val;
 
@@ -333,7 +333,7 @@ int arg;
     newsta_(oindex_1.thief, 0, 0, 0, 0);
 /* 						!NO, VANISH. */
     if (qhere_(oindex_1.thief, play_1.here)) {
-	rspeak_(498);
+	PrintMessage(498);
     }
 /* 						!IF HERO, TELL. */
     return ret_val;
@@ -342,7 +342,7 @@ L50:
     newsta_(oindex_1.still, 0, 0, oindex_1.thief, 0);
 /* 						!YES, RECOVER. */
     if (qhere_(oindex_1.thief, play_1.here)) {
-	rspeak_(499);
+	PrintMessage(499);
     }
 /* 						!IF HERO, TELL. */
     return ret_val;
@@ -364,7 +364,7 @@ L100:
 	    j = 500;
 	}
     }
-    rspeak_(j);
+    PrintMessage(j);
 /* 						!TELL IF BOOTY REAPPEARS. */
 
     j = 501;
@@ -403,7 +403,7 @@ L250:
 	    1] != 504) {
 	goto L300;
     }
-    rspeak_(626);
+    PrintMessage(626);
     return ret_val;
 
 L300:
@@ -425,7 +425,7 @@ L400:
     }
 /* 						!IN? */
     if (qhere_(oindex_1.thief, play_1.here)) {
-	rspeak_(505);
+	PrintMessage(505);
     }
 /* 						!CAN HERO SEE? */
     hack_1.thfact = TRUE_;
@@ -444,7 +444,7 @@ L500:
 	goto L600;
     }
 /* 						!TAKE? */
-    rspeak_(506);
+    PrintMessage(506);
 /* 						!JOKE. */
     return ret_val;
 
@@ -457,7 +457,7 @@ L600:
 	goto L650;
     }
 /* 						!THREW KNIFE, 10%? */
-    rspeak_(507);
+    PrintMessage(507);
 /* 						!NO, JUST MAKES */
     objcts_1.oflag2[oindex_1.thief - 1] |= FITEBT;
     return ret_val;
@@ -494,14 +494,14 @@ L700:
     hack_1.thfact = TRUE_;
     objcts_1.oflag1[oindex_1.still - 1] |= VISIBT;
     objcts_1.odesc1[oindex_1.thief - 1] = 503;
-    rspeak_(510);
+    PrintMessage(510);
 
 L750:
     if (prsvec_1.prso != oindex_1.brick || objcts_1.ocan[oindex_1.fuse - 1] !=
 	     oindex_1.brick || cevent_1.ctick[cindex_1.cevfus - 1] == 0) {
 	goto L800;
     }
-    rspeak_(511);
+    PrintMessage(511);
 /* 						!THIEF REFUSES BOMB. */
     return ret_val;
 

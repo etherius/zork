@@ -39,7 +39,7 @@ int rm;
 	if (k == 0 || (objcts_1.oflag2[i - 1] & TCHBT) != 0) {
 	    k = objcts_1.odesc1[i - 1];
 	}
-	rspeak_(k);
+	PrintMessage(k);
 /* 						!DESCRIBE. */
 	goto L500;
 /* DO SHORT DESCRIPTION OF OBJECT. */
@@ -130,7 +130,7 @@ L10:
     }
 /* 						!ANY OBJECTS? */
     if (adv == aindex_1.player) {
-	rspeak_(578);
+	PrintMessage(578);
     }
 /* 						!NO, TELL HIM. */
     return;

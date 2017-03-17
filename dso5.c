@@ -53,7 +53,7 @@ L50:
 	goto L200;
     }
 /* 						!OPEN... IS IT? */
-    rspeak_(so);
+    PrintMessage(so);
     objcts_1.oflag2[obj - 1] |= OPENBT;
     return ret_val;
 
@@ -62,13 +62,13 @@ L100:
 	goto L200;
     }
 /* 						!CLOSE... IS IT? */
-    rspeak_(sc);
+    PrintMessage(sc);
     objcts_1.oflag2[obj - 1] &= ~ OPENBT;
     return ret_val;
 
 L200:
     i__1 = rnd_(3) + 125;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!DUMMY. */
     return ret_val;
 } /* opncls_ */

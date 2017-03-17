@@ -126,7 +126,7 @@ L46000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(688);
+    PrintMessage(688);
 /* 						!DESCRIBE */
 
 /* NOW DESCRIBE POLE STATE. */
@@ -143,7 +143,7 @@ L46000:
     if (findex_1.mdir % 180 == 0) {
 	i = min(findex_1.poleuf,1) + 692;
     }
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE POLE. */
     i__1 = findex_1.mdir / 45 + 695;
     rspsub_(694, i__1);
@@ -197,7 +197,7 @@ L49000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(706);
+    PrintMessage(706);
 /* 						!DESCRIBE. */
     i = 46;
 /* 						!ODOOR IS OPEN/CLOSED. */
@@ -299,7 +299,7 @@ L54000:
     if ((objcts_1.oflag2[oindex_1.cdoor - 1] & OPENBT) != 0) {
 	i = 722;
     }
-    rspeak_(i);
+    PrintMessage(i);
     i = 46;
 /* 						!ODOOR IS OPEN/CLOSED. */
     if ((objcts_1.oflag2[oindex_1.odoor - 1] & OPENBT) != 0) {
@@ -315,7 +315,7 @@ L54000:
 
 L55000:
     if (prsvec_1.prsa == vindex_1.lookw) {
-	rspeak_(724);
+	PrintMessage(724);
     }
 /* 						!LOOK? */
     return ret_val;
@@ -343,7 +343,7 @@ L57000:
 	return ret_val;
     }
 /* 						!WALKIN? */
-    rspeak_(726);
+    PrintMessage(726);
     score_(0);
 /* moved to exit routine	CLOSE(DBCH) */
     ExitGame();
@@ -376,7 +376,7 @@ L59000:
 	i = 862;
     }
 /* 						!OPEN? */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -391,10 +391,10 @@ L60000:
 	goto L60100;
     }
 /* 						!STARTED PUZZLE? */
-    rspeak_(868);
+    PrintMessage(868);
 /* 						!NO, DESCRIBE. */
     if ((objcts_1.oflag2[oindex_1.warni - 1] & TCHBT) != 0) {
-	rspeak_(869);
+	PrintMessage(869);
     }
     return ret_val;
 
@@ -422,11 +422,11 @@ int ht;
     /* Local variables */
     int i, m1, dir, mrbf;
 
-    rspeak_(ht);
+    PrintMessage(ht);
 /* 						!DESCRIBE HALL. */
-    rspeak_(nt);
+    PrintMessage(nt);
 /* 						!DESCRIBE NORTH VIEW. */
-    rspeak_(st);
+    PrintMessage(st);
 /* 						!DESCRIBE SOUTH VIEW. */
     dir = 0;
 /* 						!ASSUME NO DIRECTION. */
@@ -464,10 +464,10 @@ L100:
 /* 						!DESCRIBE. */
     if (m1 == 1 && findex_1.mropnf) {
 	i__1 = mrbf + 823;
-	rspeak_(i__1);
+	PrintMessage(i__1);
     }
     if (mrbf != 0) {
-	rspeak_(851);
+	PrintMessage(851);
     }
 
 L200:
@@ -483,7 +483,7 @@ L200:
 	i = 854;
     }
     if (ht != 0) {
-	rspeak_(i);
+	PrintMessage(i);
     }
 /* 						!DESCRIBE HALLS. */
 } /* lookto_ */
@@ -512,11 +512,11 @@ int st;
     if (m1 && ! findex_1.mr1f || ! m1 && ! findex_1.mr2f) {
 	i += 2;
     }
-    rspeak_(i);
+    PrintMessage(i);
     if (m1 && findex_1.mropnf) {
 	i__1 = (i - 819) / 2 + 823;
-	rspeak_(i__1);
+	PrintMessage(i__1);
     }
-    rspeak_(825);
-    rspeak_(st);
+    PrintMessage(825);
+    PrintMessage(st);
 } /* ewtell_ */

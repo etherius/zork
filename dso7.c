@@ -105,7 +105,7 @@ int st;
     int i, j, k, l;
     char dgm[1*8];
 
-    rspeak_(rmk);
+    PrintMessage(rmk);
     for (i = 1; i <= 8; ++i) {
 	j = dgmoft[i - 1];
 	dgm[i - 1] = pict[puzzle_1.cpvec[st + j - 1] + 3];
@@ -134,11 +134,11 @@ L100:
 					dgm[7], dgm[7]);
 
     if (st == 10) {
-	rspeak_(870);
+	PrintMessage(870);
     }
 /* 						!AT HOLE? */
     if (st == 37) {
-	rspeak_(871);
+	PrintMessage(871);
     }
 /* 						!AT NICHE? */
     i = 872;
@@ -147,15 +147,15 @@ L100:
 	i = 873;
     }
     if (st == 52) {
-	rspeak_(i);
+	PrintMessage(i);
     }
 /* 						!AT DOOR? */
     if (puzzle_1.cpvec[st] == -2) {
-	rspeak_(874);
+	PrintMessage(874);
     }
 /* 						!EAST LADDER? */
     if (puzzle_1.cpvec[st - 2] == -3) {
-	rspeak_(875);
+	PrintMessage(875);
     }
 /* 						!WEST LADDER? */
 } /* cpinfo_ */

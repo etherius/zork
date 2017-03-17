@@ -118,7 +118,7 @@ L3000:
 	i = 16;
     }
 /* 						!IF MAGICF, CYCLOPS HOLE. */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE. */
     i = findex_1.orrug + 17;
 /* 						!ASSUME INITIAL STATE. */
@@ -126,7 +126,7 @@ L3000:
 	i += 2;
     }
 /* 						!DOOR OPEN? */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -170,7 +170,7 @@ L4000:
 	goto L4500;
     }
 /* 						!LOOK? */
-    rspeak_(21);
+    PrintMessage(21);
 /* 						!DESCRIBE CELLAR. */
     return ret_val;
 
@@ -185,7 +185,7 @@ L4500:
     }
     objcts_1.oflag2[oindex_1.door - 1] = (objcts_1.oflag2[oindex_1.door - 1] |
 	     TCHBT) & ~ OPENBT;
-    rspeak_(22);
+    PrintMessage(22);
 /* 						!SLAM AND BOLT DOOR. */
     return ret_val;
 
@@ -196,7 +196,7 @@ L5000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(23);
+    PrintMessage(23);
 /* 						!DESCRIBE. */
     i = 24;
 /* 						!ASSUME LOCKED. */
@@ -208,7 +208,7 @@ L5000:
 	i = 25;
     }
 /* 						!OPEN? */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE GRATE. */
     return ret_val;
 
@@ -219,7 +219,7 @@ L6000:
 	goto L6500;
     }
 /* 						!LOOK? */
-    rspeak_(27);
+    PrintMessage(27);
 /* 						!DESCRIBE. */
     if (findex_1.rvclr == 0) {
 	return ret_val;
@@ -231,7 +231,7 @@ L6000:
 	i = 29;
     }
 /* 						!OPEN? */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE GRATE. */
     return ret_val;
 
@@ -241,7 +241,7 @@ L6500:
 	    oindex_1.leave)) {
 	return ret_val;
     }
-    rspeak_(30);
+    PrintMessage(30);
 /* 						!MOVE LEAVES, REVEAL GRATE. */
     findex_1.rvclr = 1;
 /* 						!INDICATE LEAVES MOVED. */
@@ -261,9 +261,9 @@ L7000:
 	i = 32;
     }
 /* 						!IF LOW TIDE, EMPTY. */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE. */
-    rspeak_(33);
+    PrintMessage(33);
 /* 						!DESCRIBE EXITS. */
     return ret_val;
 
@@ -280,7 +280,7 @@ L8000:
 	i = 35;
     }
 /* 						!IF LOW TIDE, EMTPY. */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -296,8 +296,8 @@ L9000:
     if (findex_1.lwtidf) {
 	i = 37;
     }
-    rspeak_(i);
-    rspeak_(38);
+    PrintMessage(i);
+    PrintMessage(38);
     return ret_val;
 
 /* R10--	GLACIER ROOM.  STATE DEPENDS ON MELTED, VANISHED FLAGS. */
@@ -307,7 +307,7 @@ L10000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(39);
+    PrintMessage(39);
 /* 						!BASIC DESCRIPTION. */
     i = 0;
 /* 						!ASSUME NO CHANGES. */
@@ -319,7 +319,7 @@ L10000:
 	i = 41;
     }
 /* 						!COMPLETE MELT? */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -339,10 +339,10 @@ L12000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(42);
+    PrintMessage(42);
 /* 						!DESCRIBE. */
     if (findex_1.mirrmf) {
-	rspeak_(43);
+	PrintMessage(43);
     }
 /* 						!IF BROKEN, NASTY REMARK. */
     return ret_val;
@@ -361,7 +361,7 @@ L13000:
 	return ret_val;
     }
     objcts_1.oflag1[oindex_1.candl - 1] &= ~ ONBT;
-    rspeak_(47);
+    PrintMessage(47);
 /* 						!TELL OF WINDS. */
     cevent_1.cflag[cindex_1.cevcnd - 1] = FALSE_;
 /* 						!HALT CANDLE COUNTDOWN. */
@@ -460,10 +460,10 @@ L17000:
 	goto L17500;
     }
 /* 						!LOOK? */
-    rspeak_(48);
+    PrintMessage(48);
 /* 						!DESCRIBE ROOM. */
     if (objcts_1.oadv[oindex_1.garli - 1] == play_1.winner) {
-	rspeak_(49);
+	PrintMessage(49);
     }
 /* 						!BAT HOLDS NOSE. */
     return ret_val;
@@ -473,7 +473,7 @@ L17500:
 	    == play_1.winner) {
 	return ret_val;
     }
-    rspeak_(50);
+    PrintMessage(50);
 /* 						!TIME TO FLY, JACK. */
     f = moveto_(bats_1.batdrp[rnd_(9)], play_1.winner);
 /* 						!SELECT RANDOM DEST. */
@@ -488,10 +488,10 @@ L18000:
 	goto L18500;
     }
 /* 						!LOOK? */
-    rspeak_(51);
+    PrintMessage(51);
 /* 						!DESCRIBE. */
     if (findex_1.domef) {
-	rspeak_(52);
+	PrintMessage(52);
     }
 /* 						!IF ROPE, DESCRIBE. */
     return ret_val;
@@ -510,10 +510,10 @@ L19000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(54);
+    PrintMessage(54);
 /* 						!DESCRIBE. */
     if (findex_1.domef) {
-	rspeak_(55);
+	PrintMessage(55);
     }
 /* 						!IF ROPE, DESCRIBE. */
     return ret_val;
@@ -525,10 +525,10 @@ L20000:
 	goto L20500;
     }
 /* 						!LOOK? */
-    rspeak_(56);
+    PrintMessage(56);
 /* 						!DESCRIBE. */
     if (! findex_1.caroff) {
-	rspeak_(57);
+	PrintMessage(57);
     }
 /* 						!IF NOT FLIPPED, SPIN. */
     return ret_val;
@@ -548,10 +548,10 @@ L21000:
 	goto L21500;
     }
 /* 						!LOOK? */
-    rspeak_(59);
+    PrintMessage(59);
 /* 						!DESCRIBE. */
     if (! findex_1.lldf) {
-	rspeak_(60);
+	PrintMessage(60);
     }
 /* 						!IF NOT VANISHED, GHOSTS. */
     return ret_val;
@@ -567,7 +567,7 @@ L21500:
 	    oindex_1.candl - 1] & ONBT) != 0) {
 	goto L21600;
     }
-    rspeak_(62);
+    PrintMessage(62);
 /* 						!NOT EQUIPPED. */
     return ret_val;
 
@@ -594,10 +594,10 @@ L22000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(64);
+    PrintMessage(64);
 /* 						!DESCRIBE. */
     if (findex_1.onpolf) {
-	rspeak_(65);
+	PrintMessage(65);
     }
 /* 						!ON POLE? */
     return ret_val;
@@ -609,18 +609,18 @@ L23000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(66);
+    PrintMessage(66);
 /* 						!DESCRIBE. */
     i = 67;
     if (findex_1.lwtidf) {
 	i = 68;
     }
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE RESERVOIR. */
-    rspeak_(69);
+    PrintMessage(69);
 /* 						!DESCRIBE PANEL. */
     if (findex_1.gatef) {
-	rspeak_(70);
+	PrintMessage(70);
     }
 /* 						!BUBBLE IS GLOWING. */
     return ret_val;
@@ -632,7 +632,7 @@ L24000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(660);
+    PrintMessage(660);
 /* 						!DESCRIBE. */
     i = 661;
 /* 						!SET FLAG FOR BELOW. */
@@ -642,7 +642,7 @@ L24000:
 	if (! qhere_(j, rindex_1.fore3) || j == oindex_1.ftree) {
 	    goto L24200;
 	}
-	rspeak_(i);
+	PrintMessage(i);
 /* 						!SET STAGE, */
 	i = 0;
 	rspsub_(502, objcts_1.odesc2[j - 1]);
@@ -661,7 +661,7 @@ L25000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(606);
+    PrintMessage(606);
 /* 						!DESCRIBE. */
     i = 607;
 /* 						!ASSUME BASIC STATE. */
@@ -681,11 +681,11 @@ L25000:
 	i = 611;
     }
 /* 						!GONE? */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE. */
     if (! findex_1.cyclof && findex_1.rvcyc != 0) {
 	i__1 = abs(findex_1.rvcyc) + 193;
-	rspeak_(i__1);
+	PrintMessage(i__1);
     }
     return ret_val;
 
@@ -738,7 +738,7 @@ L27000:
 L27200:
 	;
     }
-    rspeak_(j);
+    PrintMessage(j);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -757,7 +757,7 @@ L29000:
 	     {
 	return ret_val;
     }
-    rspeak_(84);
+    PrintMessage(84);
 /* 						!GIVE HINT, */
     findex_1.buoyf = FALSE_;
 /* 						!THEN DISABLE. */
@@ -792,7 +792,7 @@ L31000:
 
 L31100:
     i__1 = findex_1.rvsnd + 85;
-    rspeak_(i__1);
+    PrintMessage(i__1);
 /* 						!1-3... DISCOURAGE HIM. */
     return ret_val;
 
@@ -802,7 +802,7 @@ L31400:
     if ((objcts_1.oflag1[oindex_1.statu - 1] & VISIBT) != 0) {
 	i = 88;
     }
-    rspeak_(i);
+    PrintMessage(i);
     objcts_1.oflag1[oindex_1.statu - 1] |= VISIBT;
     return ret_val;
 
@@ -832,7 +832,7 @@ L32000:
     i = findex_1.rvgua + 91;
 /* 						!GET NASTY REMARK. */
 L32100:
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -843,7 +843,7 @@ L33000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(96);
+    PrintMessage(96);
 /* 						!DESCRIBE. */
     i = 97;
 /* 						!ASSUME NO RAINBOW. */
@@ -851,7 +851,7 @@ L33000:
 	i = 98;
     }
 /* 						!GOT ONE? */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE. */
     return ret_val;
 /* RAPPL1, PAGE 10 */
@@ -863,14 +863,14 @@ L34000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(100);
+    PrintMessage(100);
 /* 						!DESCRIBE. */
     i = 102;
 /* 						!ASSUME SAFE ROOM OK. */
     if ((rooms_1.rflag[rindex_1.msafe - 1] & RMUNG) != 0) {
 	i = 101;
     }
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -881,7 +881,7 @@ L35000:
 	return ret_val;
     }
 /* 						!LOOK? */
-    rspeak_(104);
+    PrintMessage(104);
 /* 						!DESCRIBE. */
     i = 105;
 /* 						!ASSUME OK. */
@@ -889,7 +889,7 @@ L35000:
 	i = 106;
     }
 /* 						!BLOWN? */
-    rspeak_(i);
+    PrintMessage(i);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -900,7 +900,7 @@ L36000:
 	goto L36500;
     }
 /* 						!LOOK? */
-    rspeak_(107);
+    PrintMessage(107);
 /* 						!DESCRIBE. */
     return ret_val;
 
@@ -913,7 +913,7 @@ L36500:
 	goto L36600;
     }
 /* 						!ZOOM? */
-    rspeak_(108);
+    PrintMessage(108);
 /* 						!NO, SPIN HIS COMPASS. */
     return ret_val;
 
