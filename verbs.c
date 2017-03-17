@@ -233,7 +233,7 @@ L26000:
 
 L27000:
     if (! objact_()) {
-	rspsb2_(378, odo2, rmk);
+	PrintThreeMessages(378, odo2, rmk);
     }
     return ret_val;
 
@@ -241,7 +241,7 @@ L27000:
 
 L28000:
     if (! objact_()) {
-	rspsb2_(379, odo2, rmk);
+	PrintThreeMessages(379, odo2, rmk);
     }
     return ret_val;
 
@@ -250,7 +250,7 @@ L28000:
 L29000:
 L30000:
     if (! objact_()) {
-	rspsb2_(380, odo2, rmk);
+	PrintThreeMessages(380, odo2, rmk);
     }
     return ret_val;
 
@@ -258,7 +258,7 @@ L30000:
 
 L31000:
     if (! objact_()) {
-	rspsb2_(381, odo2, rmk);
+	PrintThreeMessages(381, odo2, rmk);
     }
     return ret_val;
 
@@ -266,7 +266,7 @@ L31000:
 
 L32000:
     if (! objact_()) {
-	rspsb2_(382, odo2, rmk);
+	PrintThreeMessages(382, odo2, rmk);
     }
     return ret_val;
 /* VAPPLI, PAGE 5 */
@@ -818,7 +818,7 @@ L56050:
     }
 /* 						!OBJ HANDLE? */
     if (prsvec_1.prsi != oindex_1.gwate && prsvec_1.prsi != oindex_1.water) {
-	rspsb2_(444, odi2, odo2);
+	PrintThreeMessages(444, odi2, odo2);
     }
     return ret_val;
 
@@ -973,7 +973,7 @@ L63000:
 	goto L66100;
     }
     if (! objact_()) {
-	rspsb2_(466, odo2, rmk);
+	PrintThreeMessages(466, odo2, rmk);
     }
     return ret_val;
 
@@ -1049,7 +1049,7 @@ L66400:
     j = 472;
 /* 						!NOT A WEAPON. */
 L66500:
-    rspsb2_(i, odo2, j);
+    PrintThreeMessages(i, odo2, j);
 /* 						!JOKE. */
     return ret_val;
 /* VAPPLI, PAGE 10 */

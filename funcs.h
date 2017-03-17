@@ -77,7 +77,7 @@ extern void
 	princr_ P((logical, int)),
 	rdline_ P((char *, int)),
 	PrintMessage P((int)),
-	rspsb2_ P((int, int, int)),
+	PrintThreeMessages P((int, int, int)),
 	PrintTwoMessages P((int, int)),
 	rstrgm_ P((void)),
 	savegm_ P((void)),

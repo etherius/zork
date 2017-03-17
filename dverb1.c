@@ -245,7 +245,7 @@ L500:
 	goto L600;
     }
 /* 						!ALREADY INSIDE. */
-    rspsb2_(564, objcts_1.odesc2[prsvec_1.prso - 1], objcts_1.odesc2[
+    PrintThreeMessages(564, objcts_1.odesc2[prsvec_1.prso - 1], objcts_1.odesc2[
 	    prsvec_1.prsi - 1]);
     ret_val = TRUE_;
     return ret_val;

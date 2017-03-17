@@ -22,27 +22,19 @@ static void PrintGenericMessage P((int, int, int, logical));
 
 void PrintMessage(int mesgNum)
 {
-    PrintGenericMessage(mesgNum, NO_MESSAGE, NO_MESSAGE, 1);
+    PrintGenericMessage(mesgNum, NO_MESSAGE, NO_MESSAGE, TRUE_);
 }
 
 void PrintTwoMessages(int firstMsgNum, int secondMsgNum)
 {
-    PrintGenericMessage(firstMsgNum, secondMsgNum, NO_MESSAGE, 1);
-} /* PrintTwoMessages */
-
-/* RSPSB2-- OUTPUT RANDOM MESSAGE WITH UP TO TWO SUBSTITUTABLE ARGUMENTS */
-
-/* CALLED BY-- */
-
+    PrintGenericMessage(firstMsgNum, secondMsgNum, NO_MESSAGE, TRUE_);
+}
 /* 	CALL RSPSB2(MSGNUM,SUBNUM1,SUBNUM2) */
 
-void rspsb2_(n, s1, s2)
-int n;
-int s1;
-int s2;
+void PrintThreeMessages(int firstMsgNum, int secondMsgNum , int thirdMsgNum)
 {
-    PrintGenericMessage(n, s1, s2, 1);
-} /* rspsb2_ */
+    PrintGenericMessage(firstMsgNum, secondMsgNum, thirdMsgNum, TRUE_);
+} /* PrintThreeMessages */
 
 /* rspsb2nl_ Display a substitutable message with an optional newline */
 

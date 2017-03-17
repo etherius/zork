@@ -260,7 +260,7 @@ L51000:
     if ((objcts_1.oflag2[oindex_1.qdoor - 1] & OPENBT) != 0) {
 	j = 12;
     }
-    rspsb2_(710, i, j);
+    PrintThreeMessages(710, i, j);
     return ret_val;
 
 /* R52--	NORTH CORRIDOR */
@@ -447,7 +447,7 @@ int ht;
 /* 						!MIRROR N-S? */
     PrintTwoMessages(847, dir);
 /* 						!YES, HE SEES PANEL */
-    rspsb2_(848, dir, dir);
+    PrintThreeMessages(848, dir, dir);
 /* 						!AND NARROW ROOMS. */
     goto L200;
 
